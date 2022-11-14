@@ -1,7 +1,10 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the bin/rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
-#   Character.create(name: "Luke", movie: movies.first)
+User.create(email: "fuhajin@gmail.com", first_name: "juri", last_name: "han", display_name: "jurihan")
+User.create(email: "littlefriend@gmail.com", first_name: "tony", last_name: "montana", display_name: "scarface")
+User.create(email: "quietlife@gmail.com", first_name: "yoshikage", last_name: "kira", display_name: "killerqueen")
+User.create(email: "baddad@gmail.com", first_name: "gendo", last_name: "ikari", display_name: "gendopose")
+User.create(email: "beauty@gmail.com", first_name: "audrey", last_name: "hepburn", display_name: "romanholiday")
+User.create(email: "pokerface@gmail.com", first_name: "stefani", last_name: "germanotta", display_name: "ladygaga")
+User.create(email: "illustrious@gmail.com", first_name: "mari", last_name: "makinami", display_name: "zabeasto")
+User.create(email: "bondvillian@gmail.com", first_name: "elon", last_name: "musk", display_name: "chieftwit")
+User.create(email: "darkknight@gmail.com", first_name: "bruce", last_name: "wayne", display_name: "batman")
+User.create(email: "bigguy4u@gmail.com", first_name: "tom", last_name: "hardy", display_name: "bane")
