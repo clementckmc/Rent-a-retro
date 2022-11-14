@@ -6,7 +6,7 @@ class User < ApplicationRecord
 
   validates :first_name, presence: true
   validates :last_name, presence: true
-  validates :display_name, presence: true, uniquesness: true
+  validates :display_name, presence: true, uniqueness: true
 
   has_many :offers
   has_many :rentals
