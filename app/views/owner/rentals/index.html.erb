@@ -1,0 +1,8 @@
+<div class="container">
+  <% @rentals.each do |rental| %>
+    Request to <%= rental.offer.user.display_name %>
+    <br>
+    STATUS - <%= rental.status %>
+    <br>
+  <% end %>
+</div>
