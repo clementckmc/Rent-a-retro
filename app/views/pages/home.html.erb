@@ -1,4 +1,52 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
-
-<%= link_to "browse all (list all games with offers)", games_path %>
+<section class="splash-top">
+  <div class="splash-wrap-left">
+    <h1>FIND THE BEST RETRO GAMES</h1>
+    <div class="color-line"></div>
+     <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+      <%= link_to "browse all (list all games with offers)", games_path %>
+  </div>
+  <div class="splash-wrap-right">
+    <div class="game_card">
+      <div class="game_art"></div>
+      <div class="game_card_info">
+        <h5>Game title</h5>
+        <p>release</p>
+        <p>platform</p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="how-does-it-work">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <h3>HOW DOES IT WORK</h3>
+            <div class="color-line"></div>
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quidem, molestiae.</p>
+        </div>
+        <div class="col-sm mid-item">
+          <div class= "circle-image"></div>
+          <p>Lorem, ipsum dolor sit amet.</p>
+        </div>
+        <div class="col-sm mid-item">
+          <div class= "circle-image"></div>
+          <p>Lorem, ipsum dolor sit amet.</p>
+        </div>
+        <div class="col-sm mid-item">
+          <div class= "circle-image"></div>
+          <p>Lorem, ipsum dolor sit amet.</p>
+        </div>
+      </div>
+    </div>
+</section>
+<section class= bottom-section>
+<div class="img-wrap"><img src= "assets/pexels-nick-kwan-2614818.jpg" alt=""></div>
+<div class="txt-wrap">
+  <h3>Lorem ipsum dolor sit amet.</h3>
+    <div class="color-line"></div>
+  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero labore ab quae cumque placeat earum exercitationem? Laborum tempore sed ad.</p>
+</div>
+</section>
