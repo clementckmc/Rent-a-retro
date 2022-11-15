@@ -4,6 +4,7 @@ require "faker"
 
 User.destroy_all
 Game.destroy_all
+Offer.destroy_all
 
 User.create!(
   email: "fuhajin@gmail.com",
@@ -105,8 +106,13 @@ access_token = ENV["TOKEN"]
 
 http = Net::HTTP.new("api.igdb.com", 443)
 http.use_ssl = true
-request = Net::HTTP::Post.new(URI('https://api.igdb.com/v4/games'), {'Client-ID' => client_id, 'Authorization' => "Bearer #{access_token}"})
-request.body = 'fields name,cover.url,summary; where first_release_date < 946684799; limit 25;'
+request =
+  Net::HTTP::Post.new(
+    URI("https://api.igdb.com/v4/games"),
+    { "Client-ID" => client_id, "Authorization" => "Bearer #{access_token}" },
+  )
+request.body =
+  "fields name,cover.url,summary; where first_release_date < 946684799; limit 25;"
 response = JSON.parse(http.request(request).body)
 
 response.each do |game|
