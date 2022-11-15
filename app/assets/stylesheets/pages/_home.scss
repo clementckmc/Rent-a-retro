@@ -1,70 +1,18 @@
 /** @format */
 @import "components/global";
+@import "components/game_card";
+@import "components/splash_top_section";
+@import "components/how_it_works_item";
 // Specific CSS for your home-page
 
 .color-line {
+  // for the random lines of green as seen in the figma design
+  // to be used on empty <div> elements.
   margin: 4px 0;
   margin-bottom: 24px;
   width: 240px;
   height: 4px;
   background-color: #15aebf;
-}
-
-.game_card {
-  width: 160px;
-  height: fit-content;
-  border: 1px solid black;
-  font-size: 12px;
-  line-height: 4px;
-  .game_art {
-    width: 100%;
-    height: 180px;
-    background-color: white;
-  }
-}
-.splash-top {
-  display: flex;
-  width: 100%;
-  height: 640px;
-  padding: 8px;
-  .splash-wrap-left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    width: 50%;
-  }
-  .splash-wrap-right {
-    width: 50%;
-  }
-}
-
-.how-does-it-work {
-  background-color: hwb(0 100% 0% / 0.25);
-  width: 100%;
-  height: 320px;
-  display: flex;
-  gap: 8px;
-  justify-content: center;
-  align-items: center;
-
-  p {
-    text-align: left;
-  }
-
-  .mid-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-  }
-
-  .circle-image {
-    background-color: white;
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-  }
-  text-align: center;
 }
 
 .bottom-section {
