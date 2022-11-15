@@ -8,6 +8,8 @@ class User < ApplicationRecord
   validates :last_name, presence: true
   validates :display_name, presence: true, uniqueness: true
 
-  has_many :offers
-  has_many :rentals
+  has_many :offers, dependent: :destroy
+  has_many :rentals, dependent: :destroy
+
+  has_one_attached :photo
 end
