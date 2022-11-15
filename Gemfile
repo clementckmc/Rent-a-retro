@@ -77,3 +77,8 @@ group :test do
 end
 
 gem "devise"
+
+# cloudinary
+gem "cloudinary"
+
+gem 'faker'

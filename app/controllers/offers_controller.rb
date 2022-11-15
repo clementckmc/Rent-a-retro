@@ -1,7 +1,10 @@
 class OffersController < ApplicationController
+  def index
+    @offers = Offer.all
+  end
 
   def show
-    @offers = Offer.all
+    @offer = Offer.find(params[:id])
   end
 
   def new
@@ -39,6 +42,12 @@ class OffersController < ApplicationController
   private
 
   def offer_params
-    params.require(:offer).permit(:user_id, :game_id, :condition, :platform, :price)
+    params.require(:offer).permit(
+      :user_id,
+      :game_id,
+      :condition,
+      :platform,
+      :price,
+    )
   end
 end
