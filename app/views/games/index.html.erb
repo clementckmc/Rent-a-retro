@@ -1,0 +1,27 @@
+<div class="container">
+  <div>
+    <h3>Search Results for: GAME</h3>
+  </div>
+  <div class="results-display">
+    <div>
+      <ul class="list-group">
+        <li class="list-group-item">Filter</li>
+        <li class="list-group-item">Filter</li>
+        <li class="list-group-item">Filter</li>
+        <li class="list-group-item">Filter</li>
+        <li class="list-group-item">Filter</li>
+      </ul>
+    </div>
+    <div>
+      <% @games.each do |game| %>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+          <%= link_to game_path(game), class:"results-card" do %>
+            <%= cl_image_tag(game.photo.key) %>
+            <h3><%= game.name %></h3>
+            <p><%= game.description %></p>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
