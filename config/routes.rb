@@ -2,9 +2,15 @@ Rails.application.routes.draw do
   devise_for :users
   root to: "pages#home"
 
-  resources :users do
-    resources :offers, only: [:show, :new, :create, :edit, :update]
+  resources :games, only: [:index, :show]
+
+  resources :offers, only: [:new, :create] do
+    resources :rentals, only: [:create]
   end
 
-  resources :offers, only: [:destroy]
+  namespace :owner do
+    resources :rentals, only: :index
+  end
+
+  resources :rentals, only: [:update, :index]
 end
