@@ -1,10 +1,19 @@
 <div class="container">
   <div class="row">
     <div class="col-12 mb-3 d-flex justify-content-between">
-      <h1>Game title</h1>
-      <%= linkt to games_path, class: '' %>
+      <h1><%= @game.name %></h1>
+      <%= link_to 'Back to games', games_path, class: 'btn btn-primary' %>
     </div>
     <div class="col-12">
+      <div class="row">
+        <div class="col-5">
+          <h4>Game information</h4>
+          <p><%= @game.description %></p>
+        </div>
+        <div class="col-7">
+          <%= cl_image_tag(@game.photo.key, :alt => "image", class: 'img-fluid') %>
+        </div>
+      </div>
     </div>
   </div>
 </div>
