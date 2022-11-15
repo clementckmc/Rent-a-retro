@@ -1,4 +1,5 @@
 <div class="container">
+  <%# Game content  %>
   <div class="row">
     <div class="col-12 mb-3 d-flex justify-content-between">
       <h1><%= @game.name %></h1>
@@ -7,12 +8,23 @@
     <div class="col-12">
       <div class="row">
         <div class="col-5">
-          <h4>Game information</h4>
+          <h3>Game information</h3>
           <p><%= @game.description %></p>
         </div>
         <div class="col-7">
           <%= @game.photo.attached? ? cl_image_tag(@game.photo.key, :alt => "image", class: 'img-fluid') : image_tag("https://source.unsplash.com/I6mx55jXOvM", class: 'img-fluid') %>
         </div>
+      </div>
+    </div>
+  </div>
+  <%# Offers  %>
+  <div class="row">
+    <div class="col-12">
+      <h3>Offers</h3>
+      <div class="row row-col-4">
+        <%= @offers.game do |offer| %>
+          <div class="col"></div>
+        <% end %>
       </div>
     </div>
   </div>
