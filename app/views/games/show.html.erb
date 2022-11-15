@@ -11,7 +11,7 @@
           <p><%= @game.description %></p>
         </div>
         <div class="col-7">
-          <%= cl_image_tag(@game.photo.key, :alt => "image", class: 'img-fluid') %>
+          <%= @game.photo.attached? ? cl_image_tag(@game.photo.key, :alt => "image", class: 'img-fluid') : image_tag("https://source.unsplash.com/I6mx55jXOvM", class: 'img-fluid') %>
         </div>
       </div>
     </div>
