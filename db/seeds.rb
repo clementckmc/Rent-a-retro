@@ -6,6 +6,7 @@ puts "Destroy everything..."
 User.destroy_all
 Game.destroy_all
 Offer.destroy_all
+Rental.destroy_all
 puts "Destroyed everything!"
 
 puts "Create users..."
@@ -64,3 +65,8 @@ platforms = ["PC", "Playstation", "Gameboy", "N64", "Super Nintendo"]
   )
 end
 puts "Created offers!"
+
+10.times do
+  Rental.create!(user: User.all.sample, offer: Offer.all.sample, status: "requested", start_date: "15/11/22", due_date: "22/11/22")
+end
+puts "Created rentals!"
