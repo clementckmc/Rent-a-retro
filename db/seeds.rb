@@ -131,7 +131,7 @@ end
 plattforms = ["PC", "Playstation", "Gameboy", "N64", "Super Nintendo"]
 
 10.times do
-  Offer.new(
+  Offer.create!(
     {
       user_id: User.all.sample(1),
       game_id: Game.all.sample(1),
