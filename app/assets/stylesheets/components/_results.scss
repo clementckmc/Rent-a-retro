@@ -1,0 +1,23 @@
+.results-display {
+  display: flex;
+  align-self: flex-start;
+}
+
+.results-card {
+  text-decoration: none;
+  h6 {
+    font-weight: bold;
+  }
+
+
+}
+
+.card-details {
+  position:relative;
+}
+
+.request-btn {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+}
