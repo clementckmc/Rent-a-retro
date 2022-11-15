@@ -80,3 +80,5 @@ gem "devise"
 
 # cloudinary
 gem "cloudinary"
+
+gem 'faker'
