@@ -10,6 +10,7 @@ Rental.destroy_all
 puts "Destroyed everything!"
 
 puts "Create users..."
+location = ["Tokyo-to", "Chiba-ken", "Kanagawa-ken", "Osaka-fu", "Fukuoka-ken"]
 10.times do
   User.create!(
     email: Faker::Internet.unique.email,
@@ -17,6 +18,7 @@ puts "Create users..."
     last_name: Faker::Name.unique.last_name,
     display_name: Faker::Name.unique.first_name + rand(10).to_s,
     password: "password",
+    location: location.sample
   )
 end
 puts "Created users!"
@@ -37,7 +39,7 @@ request.body =
 response = JSON.parse(http.request(request).body)
 
 response.each do |game|
-  created = Game.new({ name: game["name"], description: game["summary"] })
+  created = Game.new({ name: game["name"], description: game["summary"], release_date: Time.at(game["first_release_date"].to_i).to_s[0..9], rating: rand(10.0) })
   unless game["cover"].nil?
     img_url = "http:" + game["cover"]["url"].gsub("t_thumb", "t_cover_big")
     file = URI.open(img_url)
