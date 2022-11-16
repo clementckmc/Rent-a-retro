@@ -10,8 +10,13 @@
   </head>
   <body>
     <nav class="navbar">
-      <div class="dropdown-btn">
-        <h1><i class="fa-solid fa-bars"></i></h1>
+     <div class="dropdown">
+        <button class="btn btn-secondary fa-solid fa-bars" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="#">User</a></li>
+          <li><a class="dropdown-item" href="#">Games</a></li>
+          <li><a class="dropdown-item" href="#">Rentals</a></li>
+        </ul>
       </div>
       <div class="col-6" style="text-align: center;">
         <%= link_to root_path, class: "nav-link" do %>
