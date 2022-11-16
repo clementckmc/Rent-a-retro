@@ -5,6 +5,8 @@
 
 .results-card {
   text-decoration: none;
+  width:200px;
+  height:400px;
   h6 {
     font-weight: bold;
   }
@@ -12,11 +14,13 @@
 
 .card-details {
   position: relative;
+  height:120px;
   margin: 4px;
 }
 
 .card-picture {
   position: relative;
+  height:200px;
 }
 
 .request-btn {

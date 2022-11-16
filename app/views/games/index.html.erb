@@ -5,26 +5,25 @@
   <div class="results-display">
     <div class="me-5">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Filter</li>
-        <li class="list-group-item">Filter</li>
-        <li class="list-group-item">Filter</li>
-        <li class="list-group-item">Filter</li>
-        <li class="list-group-item">Filter</li>
+        <li class="list-group-item">Filter: Platform</li>
+        <li class="list-group-item">Filter: Year</li>
+        <li class="list-group-item">Filter: Genre</li>
+        <li class="list-group-item">Filter: Available</li>
       </ul>
     </div>
-    <div>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
-        <% @games.each do |game| %>
-          <%= link_to game_path(game), class:"col results-card" do %>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+      <% @games.each do |game| %>
+          <div class="col results-card">
             <div class="card-picture" style="background-image: url('<%= game.photo.attached? ? cl_image_path(game.photo.key) : image_path("games/noimage.png") %>')">
-            <div>
+              <%# <div class="> %>
+            </div>
+            <div class="card-details">
               <h6 class="mt-2"><%= game.name %></h6>
               <p>Release Year: 19XX</p>
-              <%= link_to "Request", games_path, class: 'btn btn-light m-2' %>
+              <%= link_to "Details", game_path(game), class: 'request-btn btn btn-light m-2' %>
             </div>
-          <% end %>
-        <% end %>
-      </div>
+          </div>
+      <% end %>
     </div>
   </div>
 </div>
