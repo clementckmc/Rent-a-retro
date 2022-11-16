@@ -82,3 +82,5 @@ gem "devise"
 gem "cloudinary"
 
 gem 'faker'
+
+gem "pundit"
