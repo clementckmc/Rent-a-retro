@@ -9,33 +9,41 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
-
-  <nav class=navbar ><h1><i class="fa-solid fa-bars">
-    </i>RENT-A-RETRO</h1>
-    <form class="form-inline">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    </form>
-    <p>login</p>
-  </nav>
-
+    <nav class=navbar >
+      <%= link_to root_path, class: "nav-link" do %>
+        <h1><i class="fa-solid fa-bars">
+          </i>RENT-A-RETRO</h1>
+      <% end %>
+      <form class="form-inline">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        </li>
+      <% end %>
+    </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
-        </div>
-        <div class="col-sm">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
-        </div>
-        <div class="col-sm">
-          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+    <footer>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+          </div>
+          <div class="col-sm">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+          </div>
+          <div class="col-sm">
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </footer>
+    </footer>
   </body>
 </html>
