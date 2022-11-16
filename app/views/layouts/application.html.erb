@@ -9,23 +9,24 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
-    <nav class=navbar >
-      <%= link_to root_path, class: "nav-link" do %>
-        <h1><i class="fa-solid fa-bars">
-          </i>RENT-A-RETRO</h1>
-      <% end %>
-      <form class="form-inline">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
-      <% if user_signed_in? %>
-        <li class="nav-item">
-          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-        </li>
-      <% else %>
-        <li class="nav-item">
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        </li>
-      <% end %>
+    <nav class="navbar">
+      <div class="dropdown-btn">
+        <h1><i class="fa-solid fa-bars"></i></h1>
+      </div>
+      <div class="col-6" style="text-align: center;">
+        <%= link_to root_path, class: "nav-link" do %>
+          <h1> RENT-A-RETRO</h1>
+        <% end %>
+      </div>
+      <div class="login-logout">
+        <h5>
+          <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+          <% else %>
+            <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+          <% end %>
+        </h5>
+      </div>
     </nav>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
