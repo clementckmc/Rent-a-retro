@@ -12,6 +12,7 @@
 }
 
 #hero-section {
+  position: relative;
   min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
@@ -29,6 +30,26 @@
       .game-card {
         transform: translateY(-50px);
       }
+    }
+  }
+
+  .white-line {
+    position: absolute;
+    z-index: -1;
+    border-right: 1px solid rgba(255,255,255, .25);
+    top: -50px;
+    bottom: 0;
+
+    &.one {
+      right: 25px;
+    }
+
+    &.two {
+      right: 27.5%;
+    }
+
+    &.three {
+      right: 90%;
     }
   }
 }
