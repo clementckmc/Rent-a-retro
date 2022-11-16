@@ -7,6 +7,7 @@ class RentalsController < ApplicationController
 
   def create
     @rental = Rental.new(rental_params)
+    authorize @rental
     @rental.offer = Offer.find(params[:offer_id])
     @rental.user = current_user
     if @rental.save
