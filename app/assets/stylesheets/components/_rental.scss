@@ -1,0 +1,14 @@
+.rental {
+  &-status {
+    font-size: 1.25rem;
+    span {
+      font-size: .75rem;
+    }
+  }
+
+  &-price {
+    text-align: right;
+    font-size: 2rem;
+    color: $neon-blue;
+  }
+}
