@@ -2,10 +2,10 @@
   sliderImages = ['LTyDj7u_TU4', 'bWYZn--b48I', 'bS46IAXWAO4', '3TiNowmZluA']
   sliderImagesSampled = sliderImages.sample(rand(0..sliderImages.length))
 %>
-<div class="container">
-  <%# Game content  %>
+<%# Game content  %>
+<section class="container my-5">
   <div class="row">
-    <div class="col-12 mb-3 d-flex justify-content-between">
+    <div class="col-12 mb-5 d-flex justify-content-between align-items-center">
       <h1><%= @game.name %></h1>
       <%= link_to 'Back to games', games_path, class: 'btn btn-primary' %>
     </div>
@@ -52,9 +52,11 @@
       </div>
     </div>
   </div>
-  <%# Offers  %>
-  <% if !@game.offers.empty? %>
-    <div class="row mt-5">
+</section>
+<%# Offer content %>
+<% if !@game.offers.empty? %>
+  <section class="container mb-5">
+    <div class="row mb-5">
       <div class="col-12">
         <h2 class="mb-3">Offers</h2>
         <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
@@ -91,5 +93,5 @@
         </div>
       </div>
     </div>
-  <% end %>
-</div>
+  </section>
+<% end %>
