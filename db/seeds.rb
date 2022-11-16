@@ -12,11 +12,12 @@ puts "Destroyed everything!"
 puts "Create users..."
 location = ["Tokyo-to", "Chiba-ken", "Kanagawa-ken", "Osaka-fu", "Fukuoka-ken"]
 10.times do
+  first_name = Faker::Name.unique.first_name
   User.create!(
     email: Faker::Internet.unique.email,
-    first_name: Faker::Name.unique.first_name,
+    first_name: first_name,
     last_name: Faker::Name.unique.last_name,
-    display_name: Faker::Name.unique.first_name + rand(10).to_s,
+    display_name: first_name + rand(10).to_s,
     password: "password",
     location: location.sample
   )
