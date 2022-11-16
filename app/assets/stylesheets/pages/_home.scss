@@ -19,16 +19,28 @@
   padding-top: 10vh;
   padding-bottom: 10vh;
 
+  h1 {
+    font-size: 3.5rem;
+  }
+
   .game-row {
     :nth-child(odd) {
       .game-card {
         transform: translateY(50px);
+
+        @include media-breakpoint-down(md) {
+          transform: none;
+        }
       }
 
     }
     :nth-child(even) {
       .game-card {
         transform: translateY(-50px);
+
+        @include media-breakpoint-down(md) {
+          transform: none;
+        }
       }
     }
   }
@@ -50,6 +62,20 @@
 
     &.three {
       right: 90%;
+    }
+  }
+
+  .blue-line {
+    position: absolute;
+    z-index: 1;
+    background-color: $neon-blue;
+    width: 4px;
+    height: 48px;
+    padding: 0;
+
+    &.one {
+      top: 25px;
+      right: 27.5%;
     }
   }
 }
