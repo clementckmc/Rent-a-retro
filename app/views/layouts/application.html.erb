@@ -31,7 +31,7 @@
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-    <footer>
+    <footer class="container-fluid py-2">
       <div class="container">
         <div class="row gx-5">
           <div class="col-sm">
@@ -40,11 +40,11 @@
             <form>
               <div class="mb-3">
                 <label for="exampleInputEmail1" class="form-label">Email address</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email here">
-                <div class="email-box mt-2">
-                  <div id="emailHelp" class="form-text"><i>(ex.) yann@dumpter.com</i></div>
-                  <button type="submit" class="btn btn-primary p-1">Submit</button>
+                <div class="d-flex gap-3">
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email here">
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
+                <div id="emailHelp" class="form-text"><i>(ex.) yann@dumpter.com</i></div>
               </div>
             </form>
           </div>

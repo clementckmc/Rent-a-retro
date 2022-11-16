@@ -1,8 +1,6 @@
 footer {
-  width: 100%;
-  height: 250px;
   background-color: #0d2f73;
-  color: #f8ffae;
+  color: #dadada;
   padding: 8px;
 }
 
@@ -17,9 +15,4 @@ footer {
 .footer-links a:hover {
   opacity: 1;
   transition: 0.3s;
-}
-
-.email-box {
-  display:flex;
-  justify-content: space-between;
 }
