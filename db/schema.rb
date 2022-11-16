@@ -47,6 +47,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_042810) do
     t.string "description"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "release_date"
+    t.float "rating"
   end
 
   create_table "offers", force: :cascade do |t|
@@ -83,6 +85,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_11_15_042810) do
     t.string "display_name", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "location"
+
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

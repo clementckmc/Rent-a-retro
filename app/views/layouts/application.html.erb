@@ -9,10 +9,33 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", defer: true %>
   </head>
   <body>
-  <nav><h1>NAV BAR</h1></nav>
+
+  <nav class=navbar ><h1><i class="fa-solid fa-bars">
+    </i>RENT-A-RETRO</h1>
+    <form class="form-inline">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    </form>
+    <p>login</p>
+  </nav>
+
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <%= yield %>
-  <footer> FOOTER</footer>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-sm">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+        </div>
+        <div class="col-sm">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+        </div>
+        <div class="col-sm">
+          <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+        </div>
+      </div>
+    </div>
+  </footer>
   </body>
 </html>

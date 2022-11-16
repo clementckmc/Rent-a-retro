@@ -1,1 +1,31 @@
+/** @format */
+@import "components/global";
+@import "components/game_card";
+@import "components/splash_top_section";
+@import "components/how_it_works_item";
 // Specific CSS for your home-page
+
+.color-line {
+  // for the random lines of green as seen in the figma design
+  // to be used on empty <div> elements.
+  margin: 4px 0;
+  margin-bottom: 24px;
+  width: 240px;
+  height: 4px;
+  background-color: #15aebf;
+}
+
+.bottom-section {
+  height: 320px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  .img-wrap {
+    width: 100%;
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+  }
+}
