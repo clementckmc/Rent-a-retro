@@ -15,6 +15,17 @@
   min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+
+  // .game-row {
+  //   :nth-child(odd) {
+  //     transform: translateY(50px);
+  //   }
+  //   :nth-child(even) {
+  //     transform: translateY(-50px);
+  //   }
+  // }
 }
 
 #instruction-section {
