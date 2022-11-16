@@ -1,20 +1,21 @@
 /** @format */
-
-.game_card {
-  width: 160px;
-  height: fit-content;
-  font-size: 12px;
-  line-height: 4px;
+.card-picture {
+  position: relative;
+  height: 300px;
+  background-repeat: no-repeat;
+  background-size: cover;
   overflow: hidden;
-  margin: 8px;
-  .game_art {
-    overflow: hidden;
-    width: 100%;
-    height: 180px;
-    display: flex;
-    .img {
-      object-fit: cover;
-      object-position: 50%;
-    }
+}
+
+.results-card {
+  text-decoration: none;
+  h6 {
+    font-weight: bold;
   }
+}
+
+.card-details {
+  position: relative;
+  height: 120px;
+  margin: 4px;
 }

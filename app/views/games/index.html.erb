@@ -5,11 +5,11 @@
   <div class="results-display">
     <div class="me-5">
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Filter</li>
-        <li class="list-group-item">Filter</li>
-        <li class="list-group-item">Filter</li>
-        <li class="list-group-item">Filter</li>
-        <li class="list-group-item">Filter</li>
+        <li class="list-group-item">Action</li>
+        <li class="list-group-item">platformer</li>
+        <li class="list-group-item">RPG</li>
+        <li class="list-group-item">adventure</li>
+        <li class="list-group-item">racing</li>
       </ul>
     </div>
     <div>
@@ -23,9 +23,11 @@
               </div>
             </div>
             <div class="card-details">
-              <h6 class="mt-2"><%= game.name %></h6>
-              <p>Release Year: 19XX</p>
-              <%= link_to "Details", game_path(game), class: 'request-btn btn btn-light m-2' %>
+            <h6 class="mt-2"><%= game.name %></h6>
+            <p>Release Year: 19XX</p>
+            <%= link_to game_path(game), class: 'request-btn btn btn-primary m-2' do %>
+            <i class="fa-regular fa-arrow-right"></i>
+            <%end %>
             </div>
           </div>
         <% end %>

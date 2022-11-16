@@ -1,26 +1,10 @@
+/** @format */
+
+@import "game_card";
+
 .results-display {
   display: flex;
   align-self: flex-start;
-}
-
-.results-card {
-  text-decoration: none;
-  h6 {
-    font-weight: bold;
-  }
-}
-
-.card-details {
-  position: relative;
-  height:120px;
-  margin: 4px;
-}
-
-.card-picture {
-  position: relative;
-  height:300px;
-  object-fit: cover;
-  background-repeat: none;
 }
 
 .request-btn {
@@ -38,6 +22,6 @@
 .platform-icon {
   border-radius: 50%;
   border: 1px solid black;
-  height:48px;
-  width:48px;
+  height: 48px;
+  width: 48px;
 }
