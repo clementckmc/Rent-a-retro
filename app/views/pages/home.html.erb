@@ -10,7 +10,7 @@
   </div>
   <div class="splash-wrap-right">
     <div class="game_card">
-      <div class="game_art"><%= cl_image_tag @games.all.select { |game| !game.photo.key.nil? }.sample.photo.key %></div>
+      <div class="game_art"><%= cl_image_tag @games.select { |game| !game.photo.key.nil? }.sample.photo.key %></div>
       <div class="game_card_info">
         <h5>Game title</h5>
         <p>release</p>
@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="game_card">
-      <div class="game_art"><%= cl_image_tag @games.all.select { |game| !game.photo.key.nil? }.sample.photo.key %></div>
+      <div class="game_art"><%= cl_image_tag @games.select { |game| !game.photo.key.nil? }.sample.photo.key %></div>
       <div class="game_card_info">
         <h5>Game title</h5>
         <p>release</p>
@@ -26,7 +26,7 @@
       </div>
     </div>
     <div class="game_card">
-      <div class="game_art"><%= cl_image_tag @games.all.select { |game| !game.photo.key.nil? }.sample.photo.key %></div>
+      <div class="game_art"><%= cl_image_tag @games.select { |game| !game.photo.key.nil? }.sample.photo.key %></div>
       <div class="game_card_info">
         <h5>Game title</h5>
         <p>release</p>
@@ -34,14 +34,14 @@
       </div>
     </div>
     <div class="game_card">
-      <div class="game_art"><%= cl_image_tag @games.all.select { |game| !game.photo.key.nil? }.sample.photo.key %></div>
+      <div class="game_art"><%= cl_image_tag @games.select { |game| !game.photo.key.nil? }.sample.photo.key %></div>
       <div class="game_card_info">
         <h5>Game title</h5>
         <p>release</p>
         <p>platform</p>
       </div>
     </div>
-  </div>
+    </div>
 </section>
 <section class="how-does-it-work">
     <div class="container">
