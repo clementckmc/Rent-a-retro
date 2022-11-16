@@ -1,0 +1,14 @@
+/** @format */
+
+.game_card {
+  width: 160px;
+  height: fit-content;
+  border: 1px solid black;
+  font-size: 12px;
+  line-height: 4px;
+  .game_art {
+    width: 100%;
+    height: 180px;
+    background-color: white;
+  }
+}
