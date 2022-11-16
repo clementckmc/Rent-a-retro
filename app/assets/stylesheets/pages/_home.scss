@@ -1,8 +1,4 @@
 /** @format */
-@import "components/global";
-@import "components/game_card";
-@import "components/splash_top_section";
-@import "components/how_it_works_item";
 // Specific CSS for your home-page
 
 .color-line {
@@ -10,39 +6,46 @@
   // to be used on empty <div> elements.
   margin: 4px 0;
   margin-bottom: 24px;
-  width: 240px;
+  width: 160px;
   height: 4px;
   background-color: #15aebf;
 }
 
-.bottom-section {
-  border: 1px solid black;
-  height: 320px;
-  padding: 8px;
+#hero-section {
+  min-height: calc(100vh - 80px);
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 16px;
-  .img-wrap {
-    width: 50%;
-    display: flex;
-    justify-content: flex-end;
-    img {
-      max-height: 100%;
-      width: 400px;
-    }
+}
+
+#instruction-section {
+  background: rgba(white, .25);
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+
+  h2 {
+    margin-bottom: 2rem;
   }
-  .txt-wrap {
-    width: 50%;
+
+  .image-circle {
+    border-radius: 50%;
+    width: 100%;
+    padding-bottom: 100%;
+    margin-bottom: 1rem;
+    background-image: url("assets/pexels-nick-kwan-2614818.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  p {
+    margin-bottom: 0;
   }
 }
 
-h1 {
-  font-size: 3rem;
-}
+#image-section {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
 
-p {
-  font-size: 1rem;
-  line-height: 1.7;
-  font-weight: light;
+  h2 {
+    margin-bottom: 2rem;
+  }
 }
