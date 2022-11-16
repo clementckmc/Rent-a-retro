@@ -33,15 +33,36 @@
     <%= yield %>
     <footer>
       <div class="container">
-        <div class="row">
+        <div class="row gx-5">
           <div class="col-sm">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+            <h3 class="mt-2">Mailing List</h3>
+            <p>Recieve the latest news updates:</p>
+            <form>
+              <div class="mb-3">
+                <label for="exampleInputEmail1" class="form-label">Email address</label>
+                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter your email here">
+                <div class="email-box mt-2">
+                  <div id="emailHelp" class="form-text"><i>(ex.) yann@dumpter.com</i></div>
+                  <button type="submit" class="btn btn-primary p-1">Submit</button>
+                </div>
+              </div>
+            </form>
           </div>
           <div class="col-sm">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+            <h3 class="mt-2">Privacy Policy</h3>
+            <p>This site is just a bit of fun and thus any information enterered on to this page should be done at the users discretion, as we haven't really spent the time to make sure your data is secure.</p>
           </div>
           <div class="col-sm">
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nulla eum dolorem eligendi cupiditate impedit totam sunt, neque architecto delectus ad.</p>
+            <h3 class="mt-2">Contact Us!</h3>
+            <div class="footer-links">
+              <a href="#"><i class="fab fa-github"></i></a>
+              <a href="#"><i class="fab fa-instagram"></i></a>
+              <a href="#"><i class="fab fa-facebook"></i></a>
+              <a href="#"><i class="fab fa-twitter"></i></a>
+              <a href="#"><i class="fa-solid fa-envelope"></i></a>
+            </div>
+            <h3 class="mt-3">About</h3>
+            <p>This page was created by Subtracked Inc in under two days as a test of our patience and fortitude.</p>
           </div>
         </div>
       </div>
