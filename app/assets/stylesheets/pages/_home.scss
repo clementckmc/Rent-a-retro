@@ -16,16 +16,23 @@
 }
 
 .bottom-section {
+  border: 1px solid black;
   height: 320px;
   padding: 8px;
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 16px;
   .img-wrap {
-    width: 100%;
+    width: 50%;
+    display: flex;
+    justify-content: flex-end;
     img {
-      max-width: 100%;
-      height: auto;
+      max-height: 100%;
+      width: 400px;
     }
+  }
+  .txt-wrap {
+    width: 50%;
   }
 }
