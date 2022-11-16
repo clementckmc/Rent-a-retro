@@ -8,16 +8,32 @@
   h6 {
     font-weight: bold;
   }
-
-
 }
 
 .card-details {
-  position:relative;
+  position: relative;
+  margin: 4px;
+}
+
+.card-picture {
+  position: relative;
 }
 
 .request-btn {
   position: absolute;
-  bottom: 1px;
-  right: 1px;
+  bottom: 0px;
+  right: 0px;
+}
+
+.platform-icon-box {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+}
+
+.platform-icon {
+  border-radius: 50%;
+  border: 1px solid black;
+  height:48px;
+  width:48px;
 }
