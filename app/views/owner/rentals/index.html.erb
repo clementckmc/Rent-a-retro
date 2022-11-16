@@ -1,0 +1,18 @@
+<div class="container">
+  <h2>Requests</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3 g-3">
+    <% @rentals.each do |rental| %>
+      <div class="col">
+        Request to <%= rental.offer.user.display_name %>
+        <br>
+        STATUS - <%= rental.status %>
+        <br>
+        <%= rental.offer.game.name %>
+        <% if rental.offer.game.photo.key %>
+          <%= cl_image_tag rental.offer.game.photo.key %>
+        <% end %>
+        <br>
+      </div>
+    <% end %>
+  </div>
+</div>
