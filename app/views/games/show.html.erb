@@ -53,41 +53,43 @@
     </div>
   </div>
   <%# Offers  %>
-  <div class="row">
-    <div class="col-12">
-      <h2 class="mb-3">Offers</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
-        <%= @game.offers.each do |offer| %>
-          <div class="col">
-            <div class="offer-container">
-              <div class="row justify-content-center">
-                <div class="col-8 col-md-6">
-                  <img src="https://kitt.lewagon.com/placeholder/users/papillar" class="offer-img" alt="">
-                </div>
-              </div>
-              <div class="row mt-3">
-                <div class="col-5">
-                  <div class="offer-price">
-                    <%= offer.price %>¥
-                    <span>per day</span>
+  <% if !@game.offers.empty? %>
+    <div class="row mt-5">
+      <div class="col-12">
+        <h2 class="mb-3">Offers</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+          <% @game.offers.each do |offer| %>
+            <div class="col">
+              <div class="offer-container">
+                <div class="row justify-content-center">
+                  <div class="col-8 col-md-6">
+                    <img src="https://kitt.lewagon.com/placeholder/users/papillar" class="offer-img" alt="">
                   </div>
                 </div>
-                <div class="col-7">
-                  <div class="offer-content">
-                    <h5><%= offer.user.display_name %></h5>
-                    <p class="mb-0">Rating: <%= rand(1..10) %></p>
-                    <p>Location</p>
+                <div class="row mt-3">
+                  <div class="col-5">
+                    <div class="offer-price">
+                      <%= offer.price %>¥
+                      <span>per day</span>
+                    </div>
+                  </div>
+                  <div class="col-7">
+                    <div class="offer-content">
+                      <h5><%= offer.user.display_name %></h5>
+                      <p class="mb-0">Rating: <%= rand(1..10) %></p>
+                      <p>Location</p>
+                    </div>
                   </div>
                 </div>
+                <div class="offer-container-background"></div>
               </div>
-              <div class="offer-container-background"></div>
+              <div class="w-100 text-center">
+                <%= link_to 'Request', '', class: 'btn btn-primary' %>
+              </div>
             </div>
-            <div class="w-100 text-center">
-              <%= link_to 'Request', '', class: 'btn btn-primary' %>
-            </div>
-          </div>
-        <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-  </div>
+  <% end %>
 </div>
