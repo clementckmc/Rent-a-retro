@@ -18,14 +18,19 @@
   padding-top: 10vh;
   padding-bottom: 10vh;
 
-  // .game-row {
-  //   :nth-child(odd) {
-  //     transform: translateY(50px);
-  //   }
-  //   :nth-child(even) {
-  //     transform: translateY(-50px);
-  //   }
-  // }
+  .game-row {
+    :nth-child(odd) {
+      .game-card {
+        transform: translateY(50px);
+      }
+
+    }
+    :nth-child(even) {
+      .game-card {
+        transform: translateY(-50px);
+      }
+    }
+  }
 }
 
 #instruction-section {
