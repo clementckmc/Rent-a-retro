@@ -4,18 +4,14 @@
   height: 300px;
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   overflow: hidden;
 }
 
 .results-card {
   text-decoration: none;
-  h6 {
+  h5 {
+    font-size: 1.125rem;
     font-weight: bold;
   }
-}
-
-.card-details {
-  position: relative;
-  height: 120px;
-  margin: 4px;
 }
