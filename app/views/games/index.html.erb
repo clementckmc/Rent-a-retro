@@ -26,7 +26,7 @@
               <div class="d-flex justify-content-between mt-3">
                 <div class="card-details me-3">
                   <h5><%= game.name %></h5>
-                  <p class="p-0">Release Year: 19XX</p>
+                  <p class="p-0">Released on <%= game.release_date %></p>
                 </div>
                 <div class="d-flex justify-content-end" style="height: fit-content;">
                   <%= link_to game_path(game), class: 'btn btn-outline-primary' do %>
