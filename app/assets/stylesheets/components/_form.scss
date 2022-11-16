@@ -1,0 +1,26 @@
+.form {
+  &-control {
+    border-radius: 0;
+    background: none;
+    border: 3px solid $primary;
+    color: $primary;
+
+    &::placeholder {
+      color: $primary;
+      opacity: 1;
+    }
+
+
+
+    &:focus {
+      background: none;
+      color: $neon-blue;
+      border: 3px solid $neon-blue;
+
+      &::placeholder {
+        color: $neon-blue;
+        opacity: 1;
+      }
+    }
+  }
+}

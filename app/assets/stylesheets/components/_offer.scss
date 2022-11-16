@@ -16,7 +16,8 @@
     background: $neon-blue;
     position: relative;
     height: 56px;
-    font-size: 1rem;
+    width: 80%;
+    font-size: calc(1rem + .5vw);
     padding: 8px;
     border-radius: 8px;
 

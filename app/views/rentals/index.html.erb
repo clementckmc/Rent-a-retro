@@ -9,7 +9,7 @@
               <div class="rental-image" style="background-image: url(<%= rental.offer.game.photo.attached? ? cl_image_path(rental.offer.game.photo.key) : image_path("games/noimage.png") %>)">
               </div>
               <div class="rental-content pt-3">
-                <div class="rental-status d-flex align-items-center justify-content-end">
+                <div class="rental-status d-flex align-items-center justify-content-end mb-2">
                   <span class="me-2"><%= rental.status %></span>
                   <% if rental.status == 'requested' %>
                     <i class="fa-solid fa-circle-notch text-info fa-spin"></i>
