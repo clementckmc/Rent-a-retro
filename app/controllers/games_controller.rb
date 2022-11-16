@@ -1,10 +1,13 @@
+# @format
+
 class GamesController < ApplicationController
-  # skip_before_action :authenticate_user!, only: [:index, :show]
+  skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    @games = Game.all
+    @games = policy_scope(Game)
   end
 
   def show
     @game = Game.find(params[:id])
+    @rental = Rental.new
   end
 end

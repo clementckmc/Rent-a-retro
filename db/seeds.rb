@@ -22,6 +22,19 @@ location = ["Tokyo-to", "Chiba-ken", "Kanagawa-ken", "Osaka-fu", "Fukuoka-ken"]
     location: location.sample
   )
 end
+User.create!(email: "user1@gmail.com",
+  first_name: "User",
+  last_name: "One",
+  display_name: "User1",
+  password: "password",
+  location: location.sample)
+
+User.create!(email: "user2@gmail.com",
+    first_name: "User",
+    last_name: "Two",
+    display_name: "User2",
+    password: "password",
+    location: location.sample)
 puts "Created users!"
 
 puts "Create games..."
