@@ -2,14 +2,11 @@
   <div class="row">
     <div class="col-12 mb-5">
       <h2>Requests</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4 g-3">
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
         <% @rentals.each do |rental| %>
           <div class="col">
             <div class="rental d-flex flex-column">
-              <div class="rental-image">
-                <% if rental.offer.game.photo.key %>
-                  <%= cl_image_tag rental.offer.game.photo.key %>
-                <% end %>
+              <div class="rental-image" style="background-image: url(<%= rental.offer.game.photo.attached? ? cl_image_path(rental.offer.game.photo.key) : image_path("games/noimage.png") %>)">
               </div>
               <div class="rental-content pt-3">
                 <div class="rental-status d-flex align-items-center justify-content-end">

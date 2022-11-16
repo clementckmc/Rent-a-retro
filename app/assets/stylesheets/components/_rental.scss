@@ -1,4 +1,11 @@
 .rental {
+
+  &-image {
+    height: 320px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
   &-status {
     font-size: 1.25rem;
     span {
