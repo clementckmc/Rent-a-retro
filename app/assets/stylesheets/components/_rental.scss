@@ -1,0 +1,21 @@
+.rental {
+
+  &-image {
+    height: 320px;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+
+  &-status {
+    font-size: 1.25rem;
+    span {
+      font-size: .75rem;
+    }
+  }
+
+  &-price {
+    text-align: right;
+    font-size: 2rem;
+    color: $neon-blue;
+  }
+}
