@@ -3,7 +3,7 @@
 class GamesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
-    @games = policy_scope(Game)
+    @games = policy_scope(Game).where.associated(:offers)
   end
 
   def show
