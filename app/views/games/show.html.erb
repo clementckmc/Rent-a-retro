@@ -105,10 +105,10 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <%# Form Content %>
-        <%= simple_form_for [offer, @user] do |f| %>
+        <%= simple_form_for [offer, @rental] do |f| %>
           <div class="modal-body mb-4 border-0">
-            <%= f.date :start_date %>
-            <%= f.date :due_date %>
+            <%= f.input :start_date %>
+            <%= f.input :due_date %>
           </div>
           <div class="modal-footer d-flex justify-content-between border-0">
             <%= link_to "Cancel", class: 'btn link-unstyled p-0 text-primary', data_bs_dismiss: 'modal' %>
