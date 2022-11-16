@@ -3,12 +3,18 @@
 .game_card {
   width: 160px;
   height: fit-content;
-  border: 1px solid black;
   font-size: 12px;
   line-height: 4px;
+  overflow: hidden;
+  margin: 8px;
   .game_art {
+    overflow: hidden;
     width: 100%;
     height: 180px;
-    background-color: white;
+    display: flex;
+    .img {
+      object-fit: cover;
+      object-position: 50%;
+    }
   }
 }

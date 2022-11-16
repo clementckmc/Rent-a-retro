@@ -1,31 +1,121 @@
-<div class="container">
-  <%# Game content  %>
+<%
+  sliderImages = ['LTyDj7u_TU4', 'bWYZn--b48I', 'bS46IAXWAO4', '3TiNowmZluA']
+  sliderImagesSampled = sliderImages.sample(rand(0..sliderImages.length))
+%>
+<%# Game content  %>
+<section class="container my-5">
   <div class="row">
-    <div class="col-12 mb-3 d-flex justify-content-between">
+    <div class="col-12 mb-5 d-flex justify-content-between align-items-center">
       <h1><%= @game.name %></h1>
       <%= link_to 'Back to games', games_path, class: 'btn btn-primary' %>
     </div>
     <div class="col-12">
       <div class="row">
         <div class="col-5">
-          <h3>Game information</h3>
+          <h2>Game information</h2>
           <p><%= @game.description %></p>
         </div>
         <div class="col-7">
-          <%= @game.photo.attached? ? cl_image_tag(@game.photo.key, :alt => "image", class: 'img-fluid') : image_tag("https://source.unsplash.com/I6mx55jXOvM", class: 'img-fluid') %>
+          <div id="gameScreenshotCarousel" class="carousel slide" data-bs-ride="true">
+            <% if !sliderImagesSampled.empty? %>
+              <div class="carousel-indicators">
+                <button type="button" data-bs-target="#gameScreenshotCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                <% sliderImagesSampled.each_with_index do |slider, index| %>
+                  <button type="button" data-bs-target="#gameScreenshotCarousel" data-bs-slide-to="<%= index + 1  %>" aria-label="Slide <%= index + 1%>"></button>
+                <% end %>
+              </div>
+            <% end %>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div class="d-flex justify-content-center align-items-center">
+                  <%= @game.photo.attached? ? cl_image_tag(@game.photo.key, :alt => "image", class: 'img-fluid') : image_tag("https://source.unsplash.com/I6mx55jXOvM", class: 'img-fluid') %>
+                </div>
+              </div>
+              <% sliderImagesSampled.each do |slider| %>
+                <div class="carousel-item">
+                  <img src="https://source.unsplash.com/<%= slider %>" class="d-block w-100" alt="...">
+                </div>
+              <% end %>
+            </div>
+            <% if !sliderImagesSampled.empty? %>
+              <button class="carousel-control-prev" type="button" data-bs-target="#gameScreenshotCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+              </button>
+              <button class="carousel-control-next" type="button" data-bs-target="#gameScreenshotCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+              </button>
+            <% end %>
+          </div>
         </div>
       </div>
     </div>
   </div>
-  <%# Offers  %>
-  <div class="row">
-    <div class="col-12">
-      <h3>Offers</h3>
-      <div class="row row-col-4">
-        <%= @offers.game do |offer| %>
-          <div class="col"></div>
+</section>
+<%# Offer content %>
+<% if !@game.offers.empty? %>
+  <section class="container mb-5">
+    <div class="row mb-5">
+      <div class="col-12">
+        <h2 class="mb-3">Offers</h2>
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
+          <% @game.offers.each do |offer| %>
+            <div class="col">
+              <div class="offer-container">
+                <div class="row justify-content-center">
+                  <div class="col-8 col-md-6">
+                    <img src="https://kitt.lewagon.com/placeholder/users/papillar" class="offer-img" alt="">
+                  </div>
+                </div>
+                <div class="row mt-3">
+                  <div class="col-5">
+                    <div class="offer-price">
+                      <%= offer.price %>¥
+                      <span>per day</span>
+                    </div>
+                  </div>
+                  <div class="col-7">
+                    <div class="offer-content">
+                      <h5><%= offer.user.display_name %></h5>
+                      <p class="mb-0">Rating: <%= rand(1..10) %></p>
+                      <p>Location</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="offer-container-background"></div>
+              </div>
+              <div class="w-100 text-center">
+                <%= link_to 'Request', '', class: 'btn btn-primary', data: {:bs_target => "#rentalModal-#{offer.user.display_name}", :bs_toggle => 'modal'} %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </section>
+<% end %>
+<%# Modal Content %>
+<% @game.offers.each do |offer| %>
+  <div id="rentalModal-<%= offer.user.display_name %>" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content">
+        <div class="modal-header mb-4 border-0">
+          <h2 class="modal-title">Rent <span class="text-primary"><%= @game.name %></span></h2>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <%# Form Content %>
+        <%= simple_form_for [offer, @rental] do |f| %>
+          <div class="modal-body mb-4 border-0">
+            <%= f.input :start_date %>
+            <%= f.input :due_date %>
+          </div>
+          <div class="modal-footer d-flex justify-content-between border-0">
+            <%= link_to "Cancel", class: 'btn link-unstyled p-0 text-primary', data_bs_dismiss: 'modal' %>
+            <%= f.submit 'Rent', class: 'btn btn-primary' %>
+          </div>
         <% end %>
       </div>
     </div>
   </div>
-</div>
+<% end %>
