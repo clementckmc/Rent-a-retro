@@ -1,5 +1,5 @@
 .rental {
-
+  position: relative;
   &-image {
     height: 320px;
     background-size: cover;
@@ -18,5 +18,15 @@
     text-align: right;
     font-size: 2rem;
     color: $neon-blue;
+  }
+
+  .action-list {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    .hidden {
+      margin: 0;
+    }
   }
 }

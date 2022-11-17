@@ -2,18 +2,20 @@
   <div class="rental-image" style="background-image: url(<%= rental.offer.game.photo.attached? ? cl_image_path(rental.offer.game.photo.key) : image_path("games/noimage.png") %>)">
   </div>
   <div class="rental-content pt-3">
-    <div class="rental-status d-flex align-items-center justify-content-end mb-2">
-      <span class="me-2"><%= rental.status %></span>
-      <% if rental.status == 'requested' %>
-        <i class="fa-solid fa-circle-notch text-info fa-spin"></i>
-      <% end%>
-      <% if rental.status == 'accepted' %>
-        <i class="fa-solid fa-circle-check text-success"></i>
-      <% end%>
-      <% if rental.status == 'denied' %>
-        <i class="fa-solid fa-circle-xmark text-danger"></i>
-      <% end%>
-    </div>
+    <% if rental %>
+      <div class="rental-status d-flex align-items-center justify-content-end mb-2">
+        <span class="me-2"><%= rental.status %></span>
+        <% if rental.status == 'requested' %>
+          <i class="fa-solid fa-clock text-info"></i>
+        <% end%>
+        <% if rental.status == 'accepted' %>
+          <i class="fa-solid fa-circle-check text-success"></i>
+        <% end%>
+        <% if rental.status == 'rejected' %>
+          <i class="fa-solid fa-circle-xmark text-danger"></i>
+        <% end%>
+      </div>
+    <% end %>
     <div class="rental-information">
       <h2><%= rental.offer.game.name %></h2>
       <p><%= rental.start_date.strftime("%d/%m/%Y") %> to <%= rental.due_date.strftime("%d/%m/%Y") %>
@@ -24,15 +26,23 @@
     <div class="rental-price">
       <span><%= ((rental.due_date - rental.start_date) * rental.offer.price).to_i %>¥</span>
     </div>
-    <div class="action-list">
+  </div>
+  <% if rental.status == 'requested' %>
+    <div class="action-list d-flex justify-content-between">
       <%= simple_form_for rental do |f| %>
-        <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
-        <%= f.submit 'Reject', class: 'btn btn-info' %>
+        <%= f.input :status, as: :hidden, input_html: { value: :rejected } %>
+        <%= f.submit 'Reject', class: 'btn btn-danger me-3' %>
       <% end %>
       <%= simple_form_for rental do |f| %>
-        <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+        <%= f.input :status, as: :hidden, input_html: { value: :accepted } %>
         <%= f.submit 'Accept', class: 'btn btn-success' %>
       <% end %>
     </div>
-  </div>
+  <% else %>
+    <% if rental.status == 'accepted' %>
+      <i class="fa-solid fa-circle-check text-success"></i>
+    <% else %>
+      <i class="fa-solid fa-circle-xmark text-danger"></i>
+    <% end%>
+  <% end %>
 </div>
