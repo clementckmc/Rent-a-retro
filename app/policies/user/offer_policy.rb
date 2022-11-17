@@ -11,4 +11,7 @@ class User::OfferPolicy < ApplicationPolicy
   def create?
     true
   end
+  def destroy?
+    true
+  end
 end
