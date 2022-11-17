@@ -1,6 +1,6 @@
 require "test_helper"
 
-class Owner::RentalsControllerTest < ActionDispatch::IntegrationTest
+class User::RentalsControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end
