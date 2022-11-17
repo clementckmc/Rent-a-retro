@@ -1,52 +1,27 @@
 <div class="container py-5">
-  <div>
-    <h2>Search Results for:</br>GAME</h2>
-  <div class="color-line"></div>
-    <%= form_with url: games_path, method: :get, class: "d-flex" do %>
-      <%= text_field_tag :query,
-        params[:query],
-        class: "form-control",
-        placeholder: "Find a game"
-      %>
-      <%= submit_tag "Search", class: "btn btn-primary" %>
-    <% end %>
-</div>
-<div class="results-display">
-  <div class="me-5">
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Action</li>
-      <li class="list-group-item">platformer</li>
-      <li class="list-group-item">RPG</li>
-      <li class="list-group-item">adventure</li>
-      <li class="list-group-item">racing</li>
-    </ul>
-  </div>
-  <div>
-    <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-3">
-      <% @games.each do |game| %>
-        <div class="col mb-4">
-          <div class="game-card">
-            <div class="card-picture" style="background-image: url('<%= game.photo.attached? ? cl_image_path(game.photo.key) : image_path("games/noimage.png") %>')">
-              <div class="platform-icon-box">
-                <%= image_tag("games/snesicon.png", class:'platform-icon') %>
-                <%= image_tag("games/psxicon.png", class:'platform-icon') %>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between mt-3">
-              <div class="card-details me-3">
-                <h5><%= game.name %></h5>
-                <p class="p-0">Released on <%= game.release_date %></p>
-              </div>
-              <div class="d-flex justify-content-end" style="height: fit-content;">
-                <%= link_to game_path(game), class: 'btn btn-outline-primary' do %>
-                  <i class="fa-solid fa-arrow-right"></i>
-                <%end %>
-              </div>
-            </div>
-          </div>
-        </div>
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">
+        <% unless params[:query].blank? %>
+          Search Results for:<br>
+          <span class="text-primary"><%= params[:query] %></span>
+        <% else %>
+          Find your<br>
+          <span class="text-primary">Game</span>
+        <% end %>
+      </h1>
+      <div class="color-line"></div>
+      <%= form_with url: games_path, method: :get, class: 'index-search d-flex mb-5' do %>
+        <%= text_field_tag :query, params[:query], class: "form-control me-4", placeholder: "Find a game" %>
+        <%= submit_tag "Search", class: "btn btn-primary" %>
       <% end %>
     </div>
   </div>
-</div>
+  <div class="row row-cols-2 row-cols-lg-3 row-cols-lg-4">
+    <% @games.each do |game| %>
+      <div class="col mb-4">
+        <%= render 'shared/card', game: game %>
+      </div>
+    <% end %>
+  </div>
 </div>
