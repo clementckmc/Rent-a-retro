@@ -1,5 +1,5 @@
 <div class="game-card">
-  <div class="card-picture" style="background-image: url('<%= game.photo.attached? ? cl_image_path(game.photo.key) : image_path("games/noimage.png") %>')">
+  <div class="card-picture shadow" style="background-image: url('<%= game.photo.attached? ? cl_image_path(game.photo.key) : image_path("games/noimage.png") %>')">
     <div class="platform-icon-box">
       <%= image_tag("games/snesicon.png", class:'platform-icon') %>
       <%= image_tag("games/psxicon.png", class:'platform-icon') %>
