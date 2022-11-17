@@ -1,0 +1,24 @@
+<nav class="navbar">
+  <div class="dropdown">
+    <button class="btn btn-secondary fa-solid fa-bars" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+      <ul class="dropdown-menu">
+        <li><a class="dropdown-item" href="#">User</a></li>
+        <li><a class="dropdown-item" href="#">Games</a></li>
+        <li><a class="dropdown-item" href="#">Rentals</a></li>
+      </ul>
+    </div>
+    <div class="col-6" style="text-align: center;">
+      <%= link_to root_path, class: "nav-link" do %>
+        <h1> RENT-A-RETRO</h1>
+      <% end %>
+    </div>
+    <div class="login-logout">
+      <h5>
+        <% if user_signed_in? %>
+          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+        <% else %>
+          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
+        <% end %>
+      </h5>
+    </div>
+  </nav>
