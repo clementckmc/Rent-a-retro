@@ -19,7 +19,7 @@ class OffersController < ApplicationController
     @offer.user = current_user
     authorize @offer
     if @offer.save
-      redirect_to root
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
