@@ -64,16 +64,24 @@
     <div class="col-lg-5 col-md-6 col-12">
       <h2>Daily Statistics :</h2>
       <div class="color-line"></div>
-      <p>Total games: <%= @allgames %>
-        <p>
-          <p>Current games on offer: <%= @allgameoffers %>
-            <p>
-              <p>Current offers: <%= @totaloffers %>
-                <p>
-                </div>
-                <div class="white-line one"></div>
-                <div class="white-line two"></div>
-                <div class="white-line three"></div>
-                <div class="blue-line one"></div>
-              </div>
-            </section>
+        <div class="row">
+          <div class="col text-center">
+            <h2 class="mb-1"><span data-controller="countup" data-countup-games-count-value="<%= @games_count %>" ></span></h2>
+            <p>Games<p>
+          </div>
+          <div class="col text-center">
+            <h2 class="mb-1"><span data-controller="countup" data-countup-games-count-value="<%= @game_offers_count %>"></span></h2>
+            <p>Offered Games<p>
+          </div>
+          <div class="col text-center">
+            <h2 class="mb-1"><span data-controller="countup" data-countup-games-count-value="<%= @offers_count %>"></span></h2>
+            <p>Offers<p>
+          </div>
+        </div>
+      </div>
+    <div class="white-line one"></div>
+    <div class="white-line two"></div>
+    <div class="white-line three"></div>
+    <div class="blue-line one"></div>
+  </div>
+</section>
