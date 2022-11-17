@@ -15,9 +15,8 @@
           <h2>Game information</h2>
           <div class="color-line"></div>
           <p><%= @game.description %></p>
-          <div class="color-line"></div>
           <p><b>Genre:</b> <%= @game.genre %></p>
-          <p><b>Release Date:</b> <%= @game.release_date %></p>
+          <p><b>Release Date:</b> <%= @game.release_date.strftime("%Y") %></p>
         </div>
         <div class="col-7">
           <div id="gameScreenshotCarousel" class="carousel slide" data-bs-ride="true">
@@ -32,12 +31,12 @@
             <div class="carousel-inner">
               <div class="carousel-item active">
                 <div class="d-flex justify-content-center align-items-center">
-                  <%= @game.photo.attached? ? cl_image_tag(@game.photo.key, :alt => "image", class: 'img-fluid') : image_tag("https://source.unsplash.com/I6mx55jXOvM", class: 'img-fluid') %>
+                  <%= @game.photo.attached? ? cl_image_tag(@game.photo.key, :alt => "image", class: 'shadow img-fluid') : image_tag("https://source.unsplash.com/I6mx55jXOvM", class: 'img-fluid') %>
                 </div>
               </div>
               <% sliderImagesSampled.each do |slider| %>
                 <div class="carousel-item">
-                  <img src="https://source.unsplash.com/<%= slider %>" class="d-block w-100" alt="...">
+                  <img src="https://source.unsplash.com/<%= slider %>" class="shadow d-block w-100" alt="...">
                 </div>
               <% end %>
             </div>
