@@ -1,5 +1,5 @@
 class User::OffersController < ApplicationController
   def index
-    @offers = policy_scope([:user, Offer])
+    @games = policy_scope(Game).where.associated(:offers)
   end
 end
