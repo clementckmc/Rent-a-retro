@@ -1,6 +1,8 @@
-require 'test_helper'
+# @format
 
-class User::RentalsPolicyTest < ActiveSupport::TestCase
+require "test_helper"
+
+class User::RentalPolicyTest < ActiveSupport::TestCase
   def test_scope
   end
 
