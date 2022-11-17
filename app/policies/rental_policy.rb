@@ -7,9 +7,11 @@ class RentalPolicy < ApplicationPolicy
       scope.where(user: user)
     end
   end
+
   def show?
     true
   end
+
   def create?
     true
   end

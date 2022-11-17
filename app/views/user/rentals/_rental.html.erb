@@ -1,21 +1,23 @@
 <div class="rental d-flex flex-column">
-  <div class="rental-image" style="background-image: url(<%= rental.offer.game.photo.attached? ? cl_image_path(rental.offer.game.photo.key) : image_path("games/noimage.png") %>)">
+  <div class="rental-image <%= rental.status == 'requested' ? 'shadow' : 'inactive' %> " style="background-image: url(<%= rental.offer.game.photo.attached? ? cl_image_path(rental.offer.game.photo.key) : image_path("games/noimage.png") %>)">
   </div>
   <div class="rental-content pt-3">
-    <div class="rental-status d-flex align-items-center justify-content-end mb-2">
-      <span class="me-2"><%= rental.status %></span>
-      <% if rental.status == 'requested' %>
-        <i class="fa-solid fa-circle-notch text-info fa-spin"></i>
-      <% end%>
-      <% if rental.status == 'accepted' %>
-        <i class="fa-solid fa-circle-check text-success"></i>
-      <% end%>
-      <% if rental.status == 'denied' %>
-        <i class="fa-solid fa-circle-xmark text-danger"></i>
-      <% end%>
-    </div>
+    <% if current_user == rental.user %>
+      <div class="rental-status d-flex align-items-center justify-content-end mb-2">
+        <span class="me-2"><%= rental.status %></span>
+        <% if rental.status == 'requested' %>
+          <i class="fa-solid fa-clock text-info"></i>
+        <% end%>
+        <% if rental.status == 'accepted' %>
+          <i class="fa-solid fa-circle-check text-success"></i>
+        <% end%>
+        <% if rental.status == 'rejected' %>
+          <i class="fa-solid fa-circle-xmark text-danger"></i>
+        <% end%>
+      </div>
+    <% end %>
     <div class="rental-information">
-      <h2><%= rental.offer.game.name %></h2>
+      <h2 class="mb-1"><%= rental.offer.game.name %></h2>
       <p><%= rental.start_date.strftime("%d/%m/%Y") %> to <%= rental.due_date.strftime("%d/%m/%Y") %>
         <br>
         from <%= rental.offer.user.display_name %>
@@ -24,7 +26,29 @@
     <div class="rental-price">
       <span><%= ((rental.due_date - rental.start_date) * rental.offer.price).to_i %>¥</span>
     </div>
-    <div class="action-list">
-    </div>
   </div>
+  <% if current_user == rental.offer.user %>
+    <div class="action-list d-flex justify-content-between">
+      <% if rental.status == 'requested' %>
+        <%= simple_form_for rental, url: user_rental_path(rental) do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: :rejected } %>
+          <%= button_tag type: 'submit', class: 'btn p-0 me-3' do %>
+            <i class="fa-solid fa-circle-xmark text-danger fa-2x bg-white rounded-circle"></i>
+          <% end%>
+        <% end %>
+        <%= simple_form_for rental, url: user_rental_path(rental) do |f| %>
+          <%= f.input :status, as: :hidden, input_html: { value: :accepted } %>
+          <%= button_tag type: 'submit', class: 'btn p-0' do %>
+            <i class="fa-solid fa-circle-check text-success fa-2x bg-white rounded-circle"></i>
+          <% end %>
+        <% end %>
+      <% else %>
+        <% if rental.status == 'accepted' %>
+          <i class="fa-solid fa-circle-check text-success fa-2x bg-white rounded-circle"></i>
+        <% else %>
+          <i class="fa-solid fa-circle-xmark text-danger fa-2x bg-white rounded-circle"></i>
+        <% end%>
+      <% end %>
+    </div>
+  <% end %>
 </div>

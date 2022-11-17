@@ -11,7 +11,7 @@ class RentalsController < ApplicationController
     @rental.offer = Offer.find(params[:offer_id])
     @rental.user = current_user
     if @rental.save
-      redirect_to rentals_path
+      redirect_to user_rentals_path
     else
       render :new, status: :unprocessable_entity
     end

@@ -5,7 +5,7 @@ class Rental < ApplicationRecord
   enum status: {
          requested: "requested",
          accepted: "accepted",
-         denied: "denied",
+         rejected: "rejected",
        },
        _default: :requested
 
