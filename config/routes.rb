@@ -8,8 +8,10 @@ Rails.application.routes.draw do
     resources :rentals, only: [:create]
   end
 
-  namespace :owner do
+  namespace :user do
+    get "profile", to: "user#show", as: :profile
     resources :rentals, only: :index
+    resources :offers, only: :index
   end
 
   resources :rentals, only: [:update, :index]
