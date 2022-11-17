@@ -43,16 +43,25 @@ access_token = ENV["TOKEN"]
 
 http = Net::HTTP.new("api.igdb.com", 443)
 http.use_ssl = true
-request =
+request_games =
   Net::HTTP::Post.new(
     URI("https://api.igdb.com/v4/games"),
     { "Client-ID" => client_id, "Authorization" => "Bearer #{access_token}" },
   )
-request.body =
+request_games.body =
   "fields name,cover.url,summary,first_release_date; where first_release_date < 946684799; limit 25;"
-response = JSON.parse(http.request(request).body)
+response_games = JSON.parse(http.request(request_games).body)
 
-response.each do |game|
+request_genres =
+  Net::HTTP::Post.new(
+    URI("https://api.igdb.com/v4/genres"),
+    { "Client-ID" => client_id, "Authorization" => "Bearer #{access_token}" },
+  )
+request_genres.body =
+  "fields id,name; limit 500;"
+response_genres = JSON.parse(http.request(request_genres).body)
+
+response_games.each do |game|
   created = Game.new({ name: game["name"], description: game["summary"], release_date: Time.at(game["first_release_date"].to_i).to_s[0..9], rating: rand(10.0) })
   if game["cover"]
     img_url = "http:" + game["cover"]["url"].gsub("t_thumb", "t_cover_big")
