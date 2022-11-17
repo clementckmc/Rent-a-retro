@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12 mb-5">
+      <h2>Requests</h2>
+      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+        <% @rentals.each do |rental| %>
+          <div class="col">
+            <div class="rental d-flex flex-column">
+              <div class="rental-image" style="background-image: url(<%= rental.offer.game.photo.attached? ? cl_image_path(rental.offer.game.photo.key) : image_path("games/noimage.png") %>)">
+              </div>
+              <div class="rental-content pt-3">
+                <div class="rental-status d-flex align-items-center justify-content-end mb-2">
+                  <span class="me-2"><%= rental.status %></span>
+                  <% if rental.status == 'requested' %>
+                    <i class="fa-solid fa-circle-notch text-info fa-spin"></i>
+                  <% end%>
+                  <% if rental.status == 'accepted' %>
+                    <i class="fa-solid fa-circle-check text-success"></i>
+                  <% end%>
+                  <% if rental.status == 'denied' %>
+                    <i class="fa-solid fa-circle-xmark text-danger"></i>
+                  <% end%>
+                </div>
+                <div class="rental-information">
+                  <h2><%= rental.offer.game.name %></h2>
+                  <p><%= rental.start_date.strftime("%d/%m/%Y") %> to <%= rental.due_date.strftime("%d/%m/%Y") %>
+                    <br>
+                    from <%= rental.offer.user.display_name %>
+                  </p>
+                </div>
+                <div class="rental-price">
+                  <span><%= ((rental.due_date - rental.start_date) * rental.offer.price).to_i %>¥</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
