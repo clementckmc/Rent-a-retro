@@ -36,49 +36,55 @@
 <section id="instruction-section">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-3">
+      <div class="col-lg-3 col-md-6 col-10 mb-lg-0 offset-lg-0 offset-md-3 offset-1 mb-5">
         <h2>How it works</h2>
         <div class="color-line"></div>
         <p>Rent-a-Retro is an innovate service that allows users to lend and borrow games from a large community of retro gamers.</p>
       </div>
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-3 text-center">
-        <div class= "image-circle" style="background-image: url('assets/home/search.png')"></div>
-        <p>Find the game you want to rent.</p>
-      </div>
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-3 text-center">
-        <div class= "image-circle" style="background-image: url('assets/home/request.png')"></div>
-        <p>Request an offer from another community member.</p>
-      </div>
-      <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-3 text-center">
-        <div class= "image-circle" style="background-image: url('assets/home/play.png')"></div>
-        <p>Play and pay per day. When finished just send it back.</p>
+      <div class="col-lg-9 col-12">
+        <div class="row">
+          <div class="col-4 mb-lg-0 text-center">
+            <div class= "image-circle mt-3" style="background-image: url('assets/home/search.png')"></div>
+            <p>Find the game you want to rent.</p>
+          </div>
+          <div class="col-4 mb-lg-0 text-center">
+            <div class= "image-circle mt-3" style="background-image: url('assets/home/request.png')"></div>
+            <p>Request an offer from another community member.</p>
+          </div>
+          <div class="col-4 mb-lg-0 text-center">
+            <div class= "image-circle mt-3" style="background-image: url('assets/home/play.png')"></div>
+            <p>Play and pay per day. When finished just send it back.</p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </section>
 <section id="image-section" class="container">
   <div class="row">
-    <div class="offset-lg-1 offset-0 col-lg-5 col-md-6 col-12 mb-md-0 mb-3">
+    <div class="offset-lg-1 offset-0 col-lg-5 col-md-6 col-12 mb-md-0 mb-5">
       <%= image_tag "pexels-nick-kwan-2614818.jpg", alt: "text", class: "img-fluid" %>
     </div>
     <div class="col-lg-5 col-md-6 col-12">
       <h2>Daily Statistics :</h2>
       <div class="color-line"></div>
-        <div class="row">
-          <div class="col text-center">
-            <h2 class="mb-1"><span data-controller="countup" data-countup-games-count-value="<%= @games_count %>" ></span></h2>
-            <p>Games<p>
-          </div>
-          <div class="col text-center">
-            <h2 class="mb-1"><span data-controller="countup" data-countup-games-count-value="<%= @game_offers_count %>"></span></h2>
-            <p>Offered Games<p>
-          </div>
-          <div class="col text-center">
-            <h2 class="mb-1"><span data-controller="countup" data-countup-games-count-value="<%= @offers_count %>"></span></h2>
-            <p>Offers<p>
-          </div>
+      <div class="row">
+        <div class="col text-center">
+          <h1 class="mb-1">
+            <span class="text-primary" data-controller="countup" data-countup-games-count-value="<%= @games_count %>" >
+            </span></h1>
+          <p>Games</p>
+        </div>
+        <div class="col text-center">
+          <h1 class="mb-1"><span class="text-primary" data-controller="countup" data-countup-games-count-value="<%= @game_offers_count %>"></span></h1>
+          <p>Offered Games</p>
+        </div>
+        <div class="col text-center">
+          <h1 class="mb-1"><span class="text-primary" data-controller="countup" data-countup-games-count-value="<%= @offers_count %>"></span></h1>
+          <p>Offers</p>
         </div>
       </div>
+    </div>
     <div class="white-line one"></div>
     <div class="white-line two"></div>
     <div class="white-line three"></div>
