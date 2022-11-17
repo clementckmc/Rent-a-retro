@@ -25,6 +25,14 @@
       <span><%= ((rental.due_date - rental.start_date) * rental.offer.price).to_i %>¥</span>
     </div>
     <div class="action-list">
+      <%= simple_form_for rental do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: 'rejected'} %>
+        <%= f.submit 'Reject', class: 'btn btn-info' %>
+      <% end %>
+      <%= simple_form_for rental do |f| %>
+        <%= f.input :status, as: :hidden, input_html: { value: 'accepted'} %>
+        <%= f.submit 'Accept', class: 'btn btn-success' %>
+      <% end %>
     </div>
   </div>
 </div>
