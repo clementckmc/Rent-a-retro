@@ -5,6 +5,10 @@
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
+
+    &.inactive {
+      filter: contrast(.25);
+    }
   }
 
   &-status {
@@ -26,7 +30,19 @@
     right: 1rem;
 
     .hidden {
-      margin: 0;
+      margin: 0 !important;
+    }
+
+    .btn {
+      &:hover {
+        i.text-success{
+          color: darken($success, 20%) !important;
+        }
+
+        i.text-danger{
+          color: darken($danger, 20%) !important;
+        }
+      }
     }
   }
 }

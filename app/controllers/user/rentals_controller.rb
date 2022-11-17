@@ -15,11 +15,14 @@ class User::RentalsController < ApplicationController
 
   def update
     @rental = Rental.find(params[:id])
-    redirect_to rentals_path
-    # if @rental.update(rental_params)
-    #   redirect_to rentals_path
-    # else
-    #   redirect_to rentals_path
-    # end
+    authorize([:user, @rental])
+    @rental.update(rental_params)
+    redirect_to user_rentals_path
+  end
+
+  private
+
+  def rental_params
+    params.require(:rental).permit(:status)
   end
 end
