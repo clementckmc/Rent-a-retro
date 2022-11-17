@@ -13,6 +13,6 @@ Rails.application.routes.draw do
   namespace :user do
     get "profile", to: "profile#show", as: :profile
     resources :rentals, only: %i[index update]
-    resources :offers, only: :index
+    resources :offers, only: %i[index update destroy]
   end
 end
