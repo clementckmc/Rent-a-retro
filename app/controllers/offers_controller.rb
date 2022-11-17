@@ -10,13 +10,16 @@ class OffersController < ApplicationController
   def new
     @user = current_user
     @offer = Offer.new
+    authorize @offer
+    @games = Game.all
   end
 
   def create
     @offer = Offer.new(offer_params)
     @offer.user = current_user
+    authorize @offer
     if @offer.save
-      redirect_to user_path(current_user)
+      redirect_to root_path
     else
       render :new, status: :unprocessable_entity
     end
