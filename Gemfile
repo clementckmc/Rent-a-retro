@@ -84,3 +84,5 @@ gem "cloudinary"
 gem 'faker'
 
 gem "pundit"
+
+gem "pg_search"
