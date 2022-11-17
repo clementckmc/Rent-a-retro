@@ -29,3 +29,32 @@
 .index-search {
   max-width: 500px;
 }
+
+#new_user {
+  .form-control {
+    height: 50px;
+  }
+
+  .form-check {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.form-check-input[type="checkbox"] {
+  border-radius: 0;
+  height: 1.5rem;
+  width: 1.5rem;
+  border: 3px solid $primary;
+  background: none;
+  margin-right: .75rem;
+  margin-top: 2px;
+
+  &:focus {
+    @include neon-yellow-shadow;
+  }
+
+  &:checked {
+    background: $primary;
+  }
+}
