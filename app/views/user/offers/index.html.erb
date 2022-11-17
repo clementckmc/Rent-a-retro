@@ -1,6 +1,6 @@
 <div class="container">
   <h1>Offers</h1>
-  <% @games.each do |game| %>
-  <p><%= game.name %></p>
-  <%end %>
+  <% @offers.each do |offer| %>
+    <p><%= offer.game.name %></p>
+  <% end %>
 </div>
