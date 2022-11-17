@@ -24,6 +24,11 @@
       }
     }
   }
+
+  &-text {
+    color: white;
+    opacity: .75;
+  }
 }
 
 .index-search {
@@ -57,4 +62,9 @@
   &:checked {
     background: $primary;
   }
+}
+
+abbr {
+  text-decoration: none !important;
+  color: $primary;
 }
