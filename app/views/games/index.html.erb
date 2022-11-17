@@ -2,10 +2,14 @@
   <div>
     <h2>Search Results for:</br>GAME</h2>
   <div class="color-line"></div>
-  <form class="d-flex gap-3 mb-5">
-    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-    <button class="btn btn-primary form-button" type="submit">Search</button>
-  </form>
+    <%= form_with url: games_path, method: :get, class: "d-flex" do %>
+      <%= text_field_tag :query,
+        params[:query],
+        class: "form-control",
+        placeholder: "Find a game"
+      %>
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    <% end %>
 </div>
 <div class="results-display">
   <div class="me-5">
