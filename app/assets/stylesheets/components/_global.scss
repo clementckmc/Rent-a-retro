@@ -21,3 +21,14 @@ p {
   line-height: 1.8;
   font-weight: 300;
 }
+
+.color-line {
+  // for the random lines of green as seen in the figma design
+  // to be used on empty <div> elements.
+  margin: 4px 0;
+  margin-bottom: 24px;
+  width: 160px;
+  height: 4px;
+  background-color: $neon-blue;
+  @include neon-blue-shadow;
+}

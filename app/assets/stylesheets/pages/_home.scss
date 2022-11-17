@@ -1,17 +1,6 @@
 /** @format */
 // Specific CSS for your home-page
 
-.color-line {
-  // for the random lines of green as seen in the figma design
-  // to be used on empty <div> elements.
-  margin: 4px 0;
-  margin-bottom: 24px;
-  width: 160px;
-  height: 4px;
-  background-color: $neon-blue;
-  @include neon-blue-shadow;
-}
-
 #hero-section {
   position: relative;
   min-height: calc(100vh - 80px);
