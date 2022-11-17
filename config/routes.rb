@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   end
 
   namespace :user do
-    get "profile", to: "user#show", as: :profile
+    get "profile", to: "profile#show", as: :profile
     resources :rentals, only: :index
     resources :offers, only: :index
   end
