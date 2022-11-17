@@ -49,7 +49,7 @@ request_games =
     { "Client-ID" => client_id, "Authorization" => "Bearer #{access_token}" },
   )
 request_games.body =
-  "fields name,cover.url,summary,first_release_date; where first_release_date < 946684799; limit 25;"
+  "fields name,cover.url,summary,first_release_date,genres; where first_release_date < 946684799; limit 25;"
 response_games = JSON.parse(http.request(request_games).body)
 
 request_genres =
@@ -62,7 +62,12 @@ request_genres.body =
 response_genres = JSON.parse(http.request(request_genres).body)
 
 response_games.each do |game|
-  created = Game.new({ name: game["name"], description: game["summary"], release_date: Time.at(game["first_release_date"].to_i).to_s[0..9], rating: rand(10.0) })
+  if game["genres"]
+    genre = response_genres.find { |g| g["id"] == game["genres"][0]}["name"]
+  else
+    genre = "N/A"
+  end
+  created = Game.new({ name: game["name"], description: game["summary"], release_date: Time.at(game["first_release_date"].to_i).to_s[0..9], rating: rand(10.0), genre: genre })
   if game["cover"]
     img_url = "http:" + game["cover"]["url"].gsub("t_thumb", "t_cover_big")
     file = URI.open(img_url)
