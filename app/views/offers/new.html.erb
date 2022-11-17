@@ -1,0 +1,8 @@
+<h1>This is the offer new page!</h1>
+
+<%= simple_form_for(@offer) do |f| %>
+    <%= f.association :game, input_html: {data: {controller: "tom_select"}} %>
+    <%= f.input :platform %>
+    <%= f.input :price %>
+    <%= f.button :submit %>
+<% end %>
