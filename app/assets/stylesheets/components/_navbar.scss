@@ -5,4 +5,7 @@
   background-color: #0d2f73;
   color: #f8ffae;
   padding: 8px;
+  span {
+    @include neon-yellow-text-shadow;
+  }
 }
