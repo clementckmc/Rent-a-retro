@@ -55,21 +55,20 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-3">
-        <h2>How does it work</h2>
+        <h2>How it works</h2>
         <div class="color-line"></div>
-        <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
+        <p>Rent-a-Retro is an innovate service that allows users to lend and borrow games from a large community of retro gamers.</p>
       </div>
       <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-3 text-center">
-        <div class= "image-circle"></div>
+        <div class= "image-circle" style="background-image: url('assets/home/search.png')"></div>
         <p>Find the game you want to rent.</p>
       </div>
       <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-3 text-center">
-        <div class= "image-circle"></div>
+        <div class= "image-circle" style="background-image: url('assets/home/request.png')"></div>
         <p>Request an offer from another community member.</p>
       </div>
       <div class="col-lg-3 col-md-6 col-12 mb-lg-0 mb-3 text-center">
-        <div class= "image-circle">
-        </div>
+        <div class= "image-circle" style="background-image: url('assets/home/play.png')"></div>
         <p>Play and pay per day. When finished just send it back.</p>
       </div>
     </div>
@@ -81,12 +80,12 @@
       <%= image_tag "pexels-nick-kwan-2614818.jpg", alt: "text", class: "img-fluid" %>
     </div>
     <div class="col-lg-5 col-md-6 col-12">
-      <h2>Lorem ipsum dolor sit amet Quadtro Takimatoa sacntu</h2>
+      <h2>Daily Statistics :</h2>
       <div class="color-line"></div>
-      <p>Consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum.<br>
-        <br>
-        Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr.</p>
-    </div>
+        <p>Total games: <%= @allgames %> <p>
+        <p>Current games on offer: <%= @allgameoffers %><p>
+        <p>Current offers: <%= @totaloffers %><p>
+      </div>
     <div class="white-line one"></div>
     <div class="white-line two"></div>
     <div class="white-line three"></div>
