@@ -21,25 +21,7 @@
       <div class="game-row row row-cols-md-2 row-cols-1">
         <% @games.each do |game|  %>
           <div class="col mb-3">
-            <div class="game-card">
-              <div class="card-picture" style="background-image: url('<%= game.photo.attached? ? cl_image_path(game.photo.key) : image_path("games/noimage.png") %>')">
-                <div class="platform-icon-box">
-                  <%= image_tag("games/snesicon.png", class:'platform-icon') %>
-                  <%= image_tag("games/psxicon.png", class:'platform-icon') %>
-                </div>
-              </div>
-              <div class="d-flex justify-content-between mt-3">
-                <div class="card-details me-3">
-                  <h5><%= game.name %></h5>
-                  <p class="p-0">Released on <%= game.release_date %></p>
-                </div>
-                <div class="d-flex justify-content-end" style="height: fit-content;">
-                  <%= link_to game_path(game), class: 'btn btn-outline-primary' do %>
-                    <i class="fa-solid fa-arrow-right"></i>
-                  <%end %>
-                </div>
-              </div>
-            </div>
+            <%= render 'shared/card', game: game %>
           </div>
         <% end%>
       </div>
