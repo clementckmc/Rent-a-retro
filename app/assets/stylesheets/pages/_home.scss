@@ -23,6 +23,11 @@
     font-size: 3.5rem;
   }
 
+  .intro-container {
+    position: sticky;
+    top: 160px;
+  }
+
   .game-row {
     :nth-child(odd) {
       .game-card {
