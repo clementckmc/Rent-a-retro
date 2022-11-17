@@ -54,7 +54,7 @@ response = JSON.parse(http.request(request).body)
 
 response.each do |game|
   created = Game.new({ name: game["name"], description: game["summary"], release_date: Time.at(game["first_release_date"].to_i).to_s[0..9], rating: rand(10.0) })
-  unless game["cover"].nil?
+  if game["cover"]
     img_url = "http:" + game["cover"]["url"].gsub("t_thumb", "t_cover_big")
     file = URI.open(img_url)
     created.photo.attach(
@@ -62,8 +62,8 @@ response.each do |game|
       filename: "#{game["id"]}.png",
       content_type: "image/png",
     )
+    created.save
   end
-  created.save
 end
 puts "Created games!"
 
