@@ -49,7 +49,7 @@ request =
     { "Client-ID" => client_id, "Authorization" => "Bearer #{access_token}" },
   )
 request.body =
-  "fields name,cover.url,summary; where first_release_date < 946684799; limit 25;"
+  "fields name,cover.url,summary,first_release_date; where first_release_date < 946684799; limit 25;"
 response = JSON.parse(http.request(request).body)
 
 response.each do |game|
