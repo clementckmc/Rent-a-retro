@@ -8,7 +8,8 @@
   margin-bottom: 24px;
   width: 160px;
   height: 4px;
-  background-color: #15aebf;
+  background-color: $neon-blue;
+  @include neon-blue-shadow;
 }
 
 #hero-section {
@@ -21,6 +22,11 @@
 
   h1 {
     font-size: 3.5rem;
+  }
+
+  .intro-container {
+    position: sticky;
+    top: 160px;
   }
 
   .game-row {
@@ -51,6 +57,7 @@
     border-right: 1px solid rgba(255,255,255, .25);
     top: -50px;
     bottom: 0;
+    width: 0;
 
     &.one {
       right: 25px;
@@ -72,6 +79,7 @@
     width: 4px;
     height: 48px;
     padding: 0;
+    @include neon-blue-shadow;
 
     &.one {
       top: 25px;
@@ -105,10 +113,51 @@
 }
 
 #image-section {
+  position: relative;
   padding-top: 10vh;
   padding-bottom: 10vh;
 
   h2 {
     margin-bottom: 2rem;
+  }
+
+  .white-line {
+    position: absolute;
+    z-index: -1;
+    border-right: 1px solid rgba(255,255,255, .25);
+    top: 0;
+    bottom: 0;
+    width: 0;
+
+    &.one {
+      right: 25px;
+    }
+
+    &.two {
+      left: 27.5%;
+    }
+
+    &.three {
+      right: 90%;
+    }
+  }
+
+  .blue-line {
+    position: absolute;
+    z-index: 1;
+    background-color: $neon-blue;
+    width: 4px;
+    height: 48px;
+    padding: 0;
+    @include neon-blue-shadow;
+
+    &.one {
+      bottom: 150px;
+      right: 25px;
+
+      @include media-breakpoint-down(lg) {
+        bottom: 25px;
+      }
+    }
   }
 }

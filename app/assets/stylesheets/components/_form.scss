@@ -1,3 +1,5 @@
+@import "effects";
+
 .form {
   &-control {
     border-radius: 0;
@@ -10,12 +12,11 @@
       opacity: 1;
     }
 
-
-
     &:focus {
       background: none;
       color: $neon-blue;
       border: 3px solid $neon-blue;
+      @include neon-blue-shadow;
 
       &::placeholder {
         color: $neon-blue;
