@@ -1,24 +1,30 @@
 <nav class="navbar">
-  <div class="dropdown">
-    <button class="btn btn-secondary fa-solid fa-bars" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-      <ul class="dropdown-menu">
-        <li><a class="dropdown-item" href="#">User</a></li>
-        <li><a class="dropdown-item" href="#">Games</a></li>
-        <li><a class="dropdown-item" href="#">Rentals</a></li>
-      </ul>
-    </div>
-    <div class="col-6" style="text-align: center;">
-      <%= link_to root_path, class: "nav-link" do %>
-        <h1> RENT-A-RETRO</h1>
+  <div class="d-flex" style="align-items:center">
+    <span><i class="fa-solid fa-gamepad fa-2xl me-2"></i></span>
+    <%= link_to root_path, class: "nav-link" do %>
+      <span style="font-size: 32px">RENT-A-RETRO</span>
+    <% end %>
+  </div>
+  <div>
+    <% if user_signed_in? %>
+      <div class="btn-group">
+        <button class="nav-user dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+          <%= current_user.display_name %>
+          <img src="https://kitt.lewagon.com/placeholder/users/papillar" class="avatar" alt="">
+        </button>
+        <ul class="dropdown-menu">
+          <li><%= link_to "Profile", user_profile_path(current_user), class: "dropdown-item" %></li>
+          <li><%= link_to "My Rentals", user_rental_path(current_user), class: "dropdown-item" %></li>
+          <li><%= link_to "My Offers", user_offer_path(current_user), class: "dropdown-item" %></li>
+          <li><hr class="dropdown-divider"></li>
+          <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
+        </ul>
+      </div>
+      <% else %>
+        <div class="d-flex">
+          <span class="me-1"><%= link_to "Sign Up |", new_user_registration_path, class: "nav-link" %></span>
+          <span><%= link_to "Login", new_user_session_path, class: "nav-link" %></span>
+        </div>
       <% end %>
-    </div>
-    <div class="login-logout">
-      <h5>
-        <% if user_signed_in? %>
-          <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
-        <% else %>
-          <%= link_to "Login", new_user_session_path, class: "nav-link" %>
-        <% end %>
-      </h5>
-    </div>
-  </nav>
+  </div>
+</nav>
