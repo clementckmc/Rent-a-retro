@@ -1,25 +1,23 @@
 <div class="container d-flex">
   <%= render "user/profile-nav" %>
-  <div class="row">
-    <div class="col-12 mb-5">
+    <div class="col-5 mx-2 mb-5 border-end">
       <h2>Outgoing Requests</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+      <div class="col d-flex flex-wrap">
         <% current_user.rentals.each do |rental| %>
-          <div class="col">
+          <div class="col-5 mx-2">
             <%= render rental %>
           </div>
         <% end %>
       </div>
     </div>
-    <div class="col-12 mb-5">
+    <div class="col-5 mx-2 mb-5 ">
       <h2>Incoming Requests</h2>
-      <div class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+      <div class="col d-flex flex-wrap">
         <% current_user.rentals_incoming.each do |rental| %>
-          <div class="col">
+          <div class="col-5 mx-2">
             <%= render rental %>
           </div>
         <% end %>
       </div>
     </div>
-  </div>
 </div>

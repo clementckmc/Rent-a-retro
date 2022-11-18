@@ -17,7 +17,7 @@
       </div>
     <% end %>
     <div class="rental-information">
-      <h2 class="mb-1"><%= rental.offer.game.name %></h2>
+      <h3 class="mb-1"><%= rental.offer.game.name %></h3>
       <p><%= rental.start_date.strftime("%d/%m/%Y") %> to <%= rental.due_date.strftime("%d/%m/%Y") %>
         <br>
         from <%= rental.offer.user.display_name %>
