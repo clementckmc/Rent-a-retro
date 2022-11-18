@@ -10,6 +10,22 @@
                 required: true,
                 autofocus: true,
                 input_html: { autocomplete: "email" }%>
+          <%= f.input :first_name,
+                required: true,
+                label: "First Name",
+                input_html: { autocomplete: "first_name" }%>
+          <%= f.input :last_name,
+                required: true,
+                label: "Last Name",
+                input_html: { autocomplete: "last_name" }%>
+          <%= f.input :display_name,
+                required: true,
+                label: "Username",
+                input_html: { autocomplete: "display_name" }%>
+          <%= f.input :photo,
+                as: :file,
+                required: true,
+                label: "Upload an avatar" %>
           <%= f.input :password,
                 required: true,
                 hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
