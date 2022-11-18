@@ -9,16 +9,18 @@
     <div>
       <% if user_signed_in? %>
         <span class="me-3"><%= link_to "New Offer", new_offer_path, class:"btn btn-primary" %></span>
-        <div class="btn-group">
-          <button class="nav-user dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <%= current_user.display_name %>
+        <div id="nav-user-container" class="btn-group">
+          <button class="nav-user btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="me-2"><%= current_user.display_name %></span>
             <img src="https://kitt.lewagon.com/placeholder/users/papillar" class="avatar" alt="">
           </button>
-          <ul class="dropdown-menu">
+          <ul id="nav-dropdown-menu" class="dropdown-menu dropdown-menu-end shadow mt-3">
             <li><%= link_to "Profile", user_profile_path(current_user), class: "dropdown-item" %></li>
             <li><%= link_to "My Rentals", user_rentals_path(current_user), class: "dropdown-item" %></li>
             <li><%= link_to "My Offers", user_offers_path(current_user), class: "dropdown-item" %></li>
-            <li><hr class="dropdown-divider"></li>
+            <li>
+              <div class="color-line my-3 mx-auto" style="height: 2px; width: 130px;"></div>
+            </li>
             <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
           </ul>
         </div>

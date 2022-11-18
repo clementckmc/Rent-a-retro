@@ -12,10 +12,38 @@
   }
 }
 
+#nav-user-container {
+  background: none !important;
+  border-radius: 0;
+  border: none;
+
+  .btn {
+    border: none !important;
+  }
+
+  #nav-dropdown-menu {
+    background: rgba($dark-blue, .75);
+    backdrop-filter: blur(10px);
+    border-radius: 0;
+    border: none;
+
+    .dropdown-item {
+      text-align: right;
+      text-shadow: none;
+      color: $primary !important;
+      padding-top: .5rem;
+      padding-bottom: .5rem;
+
+      &:hover {
+        background: none;
+        @include neon-yellow-text-shadow;
+      }
+    }
+  }
+}
+
 .nav-user {
-  border-color: rgb(50, 192, 205);
   border-radius: 5px;
   padding: 4px;
-  background-color: rgba(0,0,0,0.1);
   color: #f8ffae;
 }
