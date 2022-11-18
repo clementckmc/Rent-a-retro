@@ -31,6 +31,16 @@
     opacity: .75;
   }
 
+  &-control {
+    height: 50px;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+  }
+
   &-select {
     padding: .375rem .75rem;
     margin-left: 0 !important;
@@ -93,4 +103,51 @@
 abbr {
   text-decoration: none !important;
   color: $primary;
+}
+
+.ts-wrapper {
+  position: relative;
+}
+
+.ts-control {
+  background: none !important;
+  border: none !important;
+  color: $primary !important;
+  font-size: 1rem !important;
+
+  input {
+    color: $primary !important;
+    font-size: 1rem !important;
+  }
+}
+
+.ts-dropdown {
+  background: rgba($dark-blue, .75) !important;
+  backdrop-filter: blur(10px);
+  border-radius: 0 !important;
+  border: none !important;
+  box-shadow: 0 0.5rem 1rem rgba(black, .15) !important;
+
+  .option {
+    color: $primary !important;
+    padding: .5rem !important;
+
+    &:hover {
+      color: $neon-blue !important;
+      background-color: inherit !important;
+    }
+  }
+
+  .no-results {
+    color: $primary !important;
+  }
+
+  .active {
+    color: $neon-blue !important;
+    background-color: rgba($dark-blue, 0) !important;
+  }
+}
+
+.ts-control {
+
 }
