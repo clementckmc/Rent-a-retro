@@ -15,8 +15,8 @@
           <h2>Game information</h2>
           <div class="color-line"></div>
           <p><%= @game.description %></p>
-          <p><b>Genre:</b> <%= @game.genre %></p>
-          <p><b>Release Date:</b> <%= @game.release_date.strftime("%Y") %></p>
+          <p><span style="font-weight: 600">Genre:</span> <%= @game.genre %></p>
+          <p><span style="font-weight: 600">Release Date:</span> <%= @game.release_date.strftime("%Y") %></p>
         </div>
         <div class="col-7">
           <div id="gameScreenshotCarousel" class="carousel slide" data-bs-ride="true">
