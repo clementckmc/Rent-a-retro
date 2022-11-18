@@ -6,7 +6,7 @@
       <%= simple_form_for(@offer) do |f| %>
         <%= f.association :game, input_html: {data: {controller: "tom_select"}} %>
         <%= f.input :platform, collection: %w(NES SNES Genesis Megadrive Playstation Playstation2), input_html: {data: {controller: "tom_select"}} %>
-        <%= f.input :price %>
+        <%= f.input :price, label: 'Price per day' %>
         <div class="modal-footer d-flex justify-content-between border-0">
           <%= link_to "Cancel", root_path %>
           <%= f.button :submit, class:"btn btn-primary mt-3 mb-3" %>
