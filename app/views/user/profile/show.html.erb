@@ -1,7 +1,7 @@
 <div class="container d-flex">
   <%= render "user/profile-nav" %>
   <div class="m-3 " style= "width: 300px">
-    <img  class="rounded-circle p-3" style= "width: 100%" src="https://kitt.lewagon.com/placeholder/users/papillar" alt="">
+    <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class:"rounded-circle p-3", style:"width: 100%") : image_tag("https://kitt.lewagon.com/placeholder/users/papillar", class:"avatar") %>
     <div class="offer-content p-3">
       <h5><%= current_user.display_name %></h5>
       <p><%= current_user.first_name %> <%= current_user.last_name %></p>
