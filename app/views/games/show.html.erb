@@ -102,17 +102,18 @@
 <%# Modal Content %>
 <% @game.offers.each do |offer| %>
   <div id="rentalModal-<%= offer.user.display_name %>" class="modal fade" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
-        <div class="modal-header mb-4 border-0">
-          <h2 class="modal-title">Rent <span class="text-primary"><%= @game.name %></span></h2>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        <div class="modal-header mb-4 border-0 align-items-start">
+          <h2 class="mb-0">Rent <span class="text-primary"><%= @game.name %></span></h2>
+          <button type="button" class="btn-close mt-1" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <%# Form Content %>
         <%= simple_form_for [offer, @rental] do |f| %>
           <div class="modal-body mb-4 border-0">
-            <%= f.input :start_date %>
-            <%= f.input :due_date %>
+            <p class="mb-3">Rent from <%= offer.user.display_name %></p>
+            <%= f.input :start_date, html5: true %>
+            <%= f.input :due_date, html5: true %>
           </div>
           <div class="modal-footer d-flex justify-content-between border-0">
             <%= link_to "Cancel", class: 'btn link-unstyled p-0 text-primary', data_bs_dismiss: 'modal' %>
