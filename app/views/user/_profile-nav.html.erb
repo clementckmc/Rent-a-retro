@@ -1,5 +1,5 @@
-<nav class="nav flex-column m-3">
-  <%= link_to "Profile", user_profile_path(current_user), class:"nav-link" %>
-  <%= link_to "My Offers", user_offers_path, class:"nav-link" %>
-  <%= link_to "Incoming/ Outcoming Requests", user_rentals_path, class:"nav-link" %>
-</nav>
+<div class="d-flex flex-column">
+  <%= link_to "Profile", user_profile_path(current_user), class:"btn btn-primary mb-3" %>
+  <%= link_to "Offers", user_offers_path, class:"btn btn-primary mb-3" %>
+  <%= link_to "Rentals", user_rentals_path, class:"btn btn-primary" %>
+</div>
