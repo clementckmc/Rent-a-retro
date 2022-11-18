@@ -22,6 +22,10 @@ h2 {
   line-height: 1.4;
   font-weight: 700;
   margin-bottom: 2rem;
+
+  span.text-primary {
+    @include neon-yellow-text-shadow;
+  }
 }
 
 p {
