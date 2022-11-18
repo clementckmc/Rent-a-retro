@@ -12,7 +12,7 @@
         <div class="btn-group">
           <button class="nav-user dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
             <%= current_user.display_name %>
-            <img src="https://kitt.lewagon.com/placeholder/users/papillar" class="avatar" alt="">
+            <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar") : image_tag("https://kitt.lewagon.com/placeholder/users/papillar", class:"avatar") %>
           </button>
           <ul class="dropdown-menu">
             <li><%= link_to "Profile", user_profile_path(current_user), class: "dropdown-item" %></li>
