@@ -2,11 +2,13 @@
   width: 100%;
   display: flex;
   justify-content: space-between;
-  background-color: #0d2f73;
   color: #f8ffae;
-  padding: 8px;
-  span {
+  a {
     @include neon-yellow-text-shadow;
+  }
+
+  &.logged-in {
+    background-color: #0d2f73;
   }
 }
 

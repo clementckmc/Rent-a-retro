@@ -1,8 +1,10 @@
 <nav class="navbar">
-  <div class="d-flex" style="align-items:center">
-    <span><i class="fa-solid fa-gamepad fa-2xl me-2"></i></span>
+  <div class="container-fluid py-2">
     <%= link_to root_path, class: "nav-link" do %>
-      <span style="font-size: 32px">RENT-A-RETRO</span>
+      <div class="d-flex align-items-center">
+        <span><i class="fa-solid fa-gamepad fa-2xl me-2"></i></span>
+        <span class="fs-2 d-md-block d-none">RENT-A-RETRO</span>
+      </div>
     <% end %>
   </div>
   <div>
@@ -20,11 +22,12 @@
           <li><%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %></li>
         </ul>
       </div>
-      <% else %>
-        <div class="d-flex">
-          <span class="me-1"><%= link_to "Sign Up |", new_user_registration_path, class: "nav-link" %></span>
-          <span><%= link_to "Login", new_user_session_path, class: "nav-link" %></span>
-        </div>
-      <% end %>
+    <% else %>
+      <div class="d-flex align-items-center">
+        <%= link_to "Sign Up", new_user_registration_path, class: "me-4" %>
+        <%= link_to "Login", new_user_session_path, class: "btn btn-primary" %>
+      </div>
+    <% end %>
   </div>
+</div>
 </nav>
