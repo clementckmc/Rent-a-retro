@@ -1,23 +1,35 @@
-<div class="container d-flex">
-  <%= render "user/profile-nav" %>
-    <div class="col-5 mx-2 mb-5 border-end">
-      <h2>Outgoing Requests</h2>
-      <div class="col d-flex flex-wrap">
-        <% current_user.rentals.each do |rental| %>
-          <div class="col-5 mx-2">
-            <%= render rental %>
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">My <span class="text-primary">rentals</span></h1>
+      <div class="color-line"></div>
+    </div>
+    <div class="col-2">
+      <%= render "user/profile-nav" %>
+    </div>
+    <div class="col-10">
+      <div class="row">
+        <div class="col-6">
+          <h2>Items I <span class="text-primary">rent</span></h2>
+          <div class="row row-cols-1 row-cols-xl-2">
+            <% current_user.rentals.each do |rental| %>
+              <div class="col mb-4">
+                <%= render rental %>
+              </div>
+            <% end %>
           </div>
-        <% end %>
+        </div>
+        <div class="col-6">
+          <h2>My <span class="text-primary">rented</span> items</h2>
+          <div class="row row-cols-1 row-cols-xl-2">
+            <% current_user.rentals_incoming.each do |rental| %>
+              <div class="col mb-4">
+                <%= render rental %>
+              </div>
+            <% end %>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="col-5 mx-2 mb-5 ">
-      <h2>Incoming Requests</h2>
-      <div class="col d-flex flex-wrap">
-        <% current_user.rentals_incoming.each do |rental| %>
-          <div class="col-5 mx-2">
-            <%= render rental %>
-          </div>
-        <% end %>
-      </div>
-    </div>
+  </div>
 </div>
