@@ -49,7 +49,7 @@ request_games =
     { "Client-ID" => client_id, "Authorization" => "Bearer #{access_token}" },
   )
 request_games.body =
-  "fields name,cover.url,summary,first_release_date,genres; where first_release_date < 946684799; limit 500;"
+  "fields name,cover.url,summary,first_release_date,genres; where first_release_date < 946684799; limit 25;"
 response_games = JSON.parse(http.request(request_games).body)
 
 request_genres =
