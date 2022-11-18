@@ -7,6 +7,9 @@
   </div>
   <div>
     <% if user_signed_in? %>
+
+      <span class="me-3"><%= link_to "New Offer", new_offer_path, class:"btn btn-primary rounded" %></span>
+
       <div class="btn-group">
         <button class="nav-user dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
           <%= current_user.display_name %>
