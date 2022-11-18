@@ -1,8 +1,30 @@
 .modal {
+
   &-content {
     background: rgba($dark-blue, .9);
     backdrop-filter: blur(10px);
     padding: 1.5rem;
+    position: relative;
+
+    &:before,
+    &:after {
+      position: absolute;
+      width: 160px;
+      height: 4px;
+      background: $neon-blue;
+      content: '';
+      @include neon-blue-shadow;
+    }
+
+    &:before {
+      top: -2rem;
+      right: -2rem;
+    }
+
+    &:after {
+      bottom: -2rem;
+      left: -2rem;
+    }
   }
 
   &-header,
