@@ -1,31 +1,38 @@
-<div class="container d-flex">
-  <%= render "user/profile-nav" %>
-  <div class="offers-container">
-    <h1>My Offers</h1>
-    <div class="row row-cols-2 row-cols-lg-3 row-cols-lg-4">
-      <% @offers.each do |offer| %>
-        <div class="col mb-4">
-          <div class="game-card">
-            <div class="card-picture" style="background-image: url('<%= offer.game.photo.attached? ? cl_image_path(offer.game.photo.key) : image_path("games/noimage.png") %>')">
-              <div class="platform-icon-box">
-                <%= image_tag("games/snesicon.png", class:'platform-icon') %>
-                <%= image_tag("games/psxicon.png", class:'platform-icon') %>
-              </div>
-            </div>
-            <div class="d-flex justify-content-between mt-3">
-              <div class="card-details me-3">
-                <h5><%= offer.game.name %></h5>
-                <p class="p-0">Platform: <%= offer.platform %></p>
-                <p class="p-0">Price: <%= offer.price %></p>
-                <%= link_to user_offer_path(offer),
+<div class="container py-5">
+  <div class="row">
+    <div class="col-12">
+      <h1 class="mb-4">My <span class="text-primary">Offers</span></h1>
+      <div class="color-line"></div>
+    </div>
+    <div class="col-3">
+      <%= render "user/profile-nav" %>
+    </div>
+    <div class="col-9">
+      <div class="row row-cols-2 row-cols-lg-3">
+        <% @offers.each do |offer| %>
+          <div class="col mb-4">
+            <div class="game-card">
+              <div class="card-picture" style="background-image: url('<%= offer.game.photo.attached? ? cl_image_path(offer.game.photo.key) : image_path("games/noimage.png") %>')">
+                <div class="action-list">
+                  <%= link_to user_offer_path(offer),
   data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} do %>
-                  <button type="button" class="btn btn-danger">Delete Offer</button>
-                <% end %>
+                    <i class="fa-solid fa-circle-minus text-danger bg-white rounded-circle fa-2x"></i>
+                  <% end %>
+                </div>
+              </div>
+              <div class="mt-3">
+                <div class="card-details">
+                  <h5><%= offer.game.name %></h5>
+                  <p>Platform: <%= offer.platform %></p>
+                  <div class="rental-price">
+                    <span>Price: <%= offer.price %>¥</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      <% end %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

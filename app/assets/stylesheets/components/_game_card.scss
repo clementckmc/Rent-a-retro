@@ -6,6 +6,20 @@
   background-size: cover;
   background-position: center;
   overflow: hidden;
+
+  .action-list {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+
+    a {
+      &:hover {
+        i.text-danger {
+          color: darken($danger, 20%) !important;
+        }
+      }
+    }
+  }
 }
 
 .results-card {
@@ -13,5 +27,13 @@
   h5 {
     font-size: 1.125rem;
     font-weight: bold;
+  }
+}
+
+.game-card {
+  .rental-price {
+    text-align: right;
+    font-size: 2rem;
+    color: #43C6AC;
   }
 }
