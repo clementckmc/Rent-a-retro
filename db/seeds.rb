@@ -90,7 +90,7 @@ platforms = ["PC", "Playstation", "Gameboy", "N64", "Super Nintendo"]
       user: User.all.sample,
       game: Game.all.sample,
       platform: platforms.sample,
-      price: rand(500..1000),
+      price: rand(50..100),
     },
   )
 end
