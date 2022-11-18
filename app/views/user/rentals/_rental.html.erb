@@ -32,13 +32,13 @@
       <% if rental.status == 'requested' %>
         <%= simple_form_for rental, url: user_rental_path(rental) do |f| %>
           <%= f.input :status, as: :hidden, input_html: { value: :rejected } %>
-          <%= button_tag type: 'submit', class: 'btn p-0 me-3' do %>
+          <%= button_tag type: 'submit', data: { turbo_method: 'submit', turbo_confirm: "Reject this offer?" }, class: 'btn p-0 me-3' do %>
             <i class="fa-solid fa-circle-xmark text-danger fa-2x bg-white rounded-circle"></i>
           <% end%>
         <% end %>
         <%= simple_form_for rental, url: user_rental_path(rental) do |f| %>
           <%= f.input :status, as: :hidden, input_html: { value: :accepted } %>
-          <%= button_tag type: 'submit', class: 'btn p-0' do %>
+          <%= button_tag type: 'submit', data: { turbo_method: 'submit', turbo_confirm: "Accept this offer?" }, class: 'btn p-0 me-3' do %>
             <i class="fa-solid fa-circle-check text-success fa-2x bg-white rounded-circle"></i>
           <% end %>
         <% end %>
