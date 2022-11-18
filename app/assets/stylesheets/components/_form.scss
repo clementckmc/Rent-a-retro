@@ -56,11 +56,13 @@
   margin-top: 2px;
 
   &:focus {
-    @include neon-yellow-shadow;
+    border-color: $neon-blue;
+    @include neon-blue-shadow;
   }
 
   &:checked {
-    background: $primary;
+    border-color: $neon-blue;
+    background: $neon-blue;
   }
 }
 
