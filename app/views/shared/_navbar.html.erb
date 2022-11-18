@@ -9,10 +9,10 @@
     <div>
       <% if user_signed_in? %>
         <span class="me-3"><%= link_to "New Offer", new_offer_path, class:"btn btn-primary" %></span>
-        <div id="nav-user-container" class="btn-group">
-          <button class="nav-user btn dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <span class="me-2"><%= current_user.display_name %></span>
-            <img src="https://kitt.lewagon.com/placeholder/users/papillar" class="avatar" alt="">
+        <div class="btn-group">
+          <button class="nav-user dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+            <%= current_user.display_name %>
+            <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class: "avatar") : image_tag("https://kitt.lewagon.com/placeholder/users/papillar", class:"avatar") %>
           </button>
           <ul id="nav-dropdown-menu" class="dropdown-menu dropdown-menu-end shadow mt-3">
             <li><%= link_to "Profile", user_profile_path(current_user), class: "dropdown-item" %></li>
