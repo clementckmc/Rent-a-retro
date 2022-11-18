@@ -4,7 +4,7 @@ class GamesController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[index show]
   def index
     if params[:query].present?
-    @games = policy_scope(Game).search(params[:query]).where.associated(:offers)
+    @games = policy_scope(Game).select("DISTINCT ON (games.id) games.*").where.associated(:offers).search(params[:query]).reorder(:id)
     else
     @games = policy_scope(Game).where.associated(:offers).distinct
     end
