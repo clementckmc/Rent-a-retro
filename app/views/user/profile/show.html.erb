@@ -10,7 +10,7 @@
     <div class="col-10">
       <div class="row align-items-center">
         <div class="col-4">
-          <img  class="rounded-circle w-100 shadow-sm"  src="https://kitt.lewagon.com/placeholder/users/papillar" alt="">
+          <%= current_user.photo.attached? ? cl_image_tag(current_user.photo.key, class:"rounded-circle w-100 shadow-sm", style:"width: 100%") : image_tag("https://kitt.lewagon.com/placeholder/users/papillar", class: "rounded-circle w-100 shadow-sm") %>
         </div>
         <div class="col-8">
           <div>
