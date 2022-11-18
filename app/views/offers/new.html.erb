@@ -7,9 +7,11 @@
         <%= f.association :game, input_html: {data: {controller: "tom_select"}} %>
         <%= f.input :platform, collection: %w(NES SNES Genesis Megadrive Playstation Playstation2), input_html: {data: {controller: "tom_select"}} %>
         <%= f.input :price %>
-        <%= f.button :submit, class:"btn btn-primary mt-3 mb-3" %>
-      <% end %>
-      <%= link_to "Cancel", root_path %>
+        <div class="modal-footer d-flex justify-content-between border-0">
+          <%= link_to "Cancel", root_path %>
+          <%= f.button :submit, class:"btn btn-primary mt-3 mb-3" %>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>
