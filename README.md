@@ -2,10 +2,8 @@
 
 Rails app generated with [lewagon/rails-templates](https://github.com/lewagon/rails-templates), created by the [Le Wagon coding bootcamp](https://www.lewagon.com) team.
 
-_DROP SCREENSHOT HERE_
-<br>
+<img width="1440" alt="Screen Shot 2022-12-05 at 12 36 41" src="https://user-images.githubusercontent.com/46878585/205544106-31c121e9-e0c9-4899-b0a8-bda6a3ad65df.png">
 App home: https://rent-a-retro.herokuapp.com/
-   
 
 ## Getting Started
 ### Setup
