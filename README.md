@@ -48,7 +48,7 @@ rails s
 - [Figma](https://www.figma.com) — Prototyping
 
 ## Team Members
-- [Clement Choi](https://www.linkedin.com/in/clement-choi-hk55/)
+- [Clement Choi](https://www.linkedin.com/in/clement-choi)
 - [Alexander Vasse](https://www.linkedin.com/in/alexandervasse)
 - [Patrick Stark](https://www.linkedin.com/in/patrick-stark)
 - [Kaho Cheng](https://www.linkedin.com/in/ka-ho-cheng-19584b223)
