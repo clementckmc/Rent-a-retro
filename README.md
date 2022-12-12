@@ -49,9 +49,9 @@ rails s
 
 ## Team Members
 - [Clement Choi](https://www.linkedin.com/in/clement-choi-hk55/)
-- Alex Vasse
-- Patrick Stark
-- Kaho Cheng
+- [Alexander Vasse](https://www.linkedin.com/in/alexandervasse)
+- [Patrick Stark](https://www.linkedin.com/in/patrick-stark)
+- [Kaho Cheng](https://www.linkedin.com/in/ka-ho-cheng-19584b223)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
